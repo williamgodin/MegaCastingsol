@@ -1,0 +1,117 @@
+﻿<Window x:Class="MegaCastWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaCastWPF"
+        xmlns:views="clr-namespace:MegaCastWPF.Views"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWidows" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200pt"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="MediumPurple">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="MegaCasting" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" FontFamily="Italic" FontStretch="ExtraCondensed"/>
+            <Button Grid.Row="1" Name="BurttonBroadcasteur" Content="Diffuseurs" Style="{StaticResource ButtonStyle}" Click="BurttonBroadcasteur_Click"></Button>
+            <Button Grid.Row="2" Content="Artistes" Style="{StaticResource ButtonStyle}"></Button>
+            <Button Grid.Row="3" Content="Offres" Style="{StaticResource ButtonStyle}"></Button>
+            <Button Grid.Row="4" Content="Recruteurs" Style="{StaticResource ButtonStyle}"></Button>
+
+            
+            
+        </Grid>
+        <DockPanel Name="DockPanel" Grid.Column="1">
+            <views:ViewMain/>
+        </DockPanel>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Fichier">
+                <MenuItem x:Name="MenuItem_Save" Header="Sauvegarder"/>
+                <Separator/>
+                <MenuItem x:Name="MenuItem_Exit" Header="Quitter" Click="MenuItem_Exit_Click"/>
+                </MenuItem>
+        </Menu>
+        <TabControl Grid.Row="1">
+            <TabItem Header="Formulaire">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200pt"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Nom :"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Date :"/>
+                    
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="Saisir le nom"/>
+                    <DatePicker Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Formulaire">
+                <Grid>
+                    <ListBox SelectionChanged="ListBox_SelectionChanged">
+                        <ListBoxItem>Mr</ListBoxItem>
+                        <ListBoxItem>Mme</ListBoxItem>
+                        <ListBoxItem>Docteur</ListBoxItem>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Formulaire">
+                <Grid>
+                    <DataGrid>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nom"/>
+                            <DataGridTextColumn Header="Prenom"/>
+                            <DataGridTextColumn Header="Age"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Formulaire">
+                <GroupBox Header="GroupBox">
+                    <StackPanel>
+                        <Label Content="Mon héro"/>
+                        <ComboBox x:Name="_ComboboxCivilities">
+                            
+                        </ComboBox>
+
+                    
+                    <TextBox Name="TextBoxCivilityName" Text="{Binding Path=SelectedItem,ElementName=_ComboboxCivilities,UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </GroupBox>
+            </TabItem>
+            <TabItem>
+                <StackPanel>
+                    <materialDesign:Card Padding="32" Margin="16">
+                        <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
+                    </materialDesign:Card>
+                </StackPanel>
+            </TabItem>
+        </TabControl>-->
+    </Grid>
+</Window>

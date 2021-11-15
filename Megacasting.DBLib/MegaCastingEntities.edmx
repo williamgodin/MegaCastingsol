@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MegacastingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Artiste">
+          <Key>
+            <PropertyRef Name="Id_Artiste" />
+          </Key>
+          <Property Name="Id_Artiste" Type="int" Nullable="false" />
+          <Property Name="Id_Personne" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Casting">
+          <Key>
+            <PropertyRef Name="Id_Casting" />
+          </Key>
+          <Property Name="Id_Casting" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Intitule" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Reference" Type="int" Nullable="false" />
+          <Property Name="Date_debut_publication" Type="datetime" Nullable="false" />
+          <Property Name="Nbr_poste" Type="int" Nullable="false" />
+          <Property Name="Localisation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_poste" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Description_profil" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Coordonnees" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Duree_diffusion" Type="datetime" Nullable="false" />
+          <Property Name="Id_Professionnel" Type="int" Nullable="false" />
+          <Property Name="Id_Contrat" Type="int" Nullable="false" />
+          <Property Name="Id_Metier" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Civilité">
+          <Key>
+            <PropertyRef Name="Id_Civilite" />
+          </Key>
+          <Property Name="Id_Civilite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Genre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Domaine_de_métier">
+          <Key>
+            <PropertyRef Name="Id_Domaine_metier" />
+          </Key>
+          <Property Name="Id_Domaine_metier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Métier">
+          <Key>
+            <PropertyRef Name="Id_Metier" />
+          </Key>
+          <Property Name="Id_Metier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Domaine_metier" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Participer">
+          <Key>
+            <PropertyRef Name="Id_Casting" />
+            <PropertyRef Name="Id_Artiste" />
+          </Key>
+          <Property Name="Id_Casting" Type="int" Nullable="false" />
+          <Property Name="Id_Artiste" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="Id_Personne" />
+          </Key>
+          <Property Name="Id_Personne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prenom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ville" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresse" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="Id_Civilite" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Professionnel">
+          <Key>
+            <PropertyRef Name="Id_Professionnel" />
+          </Key>
+          <Property Name="Id_Professionnel" Type="int" Nullable="false" />
+          <Property Name="Id_Personne" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type_de_contrat">
+          <Key>
+            <PropertyRef Name="Id_Contrat" />
+          </Key>
+          <Property Name="Id_Contrat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Artiste__Id_Pers__300424B4">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="Artiste" Type="Self.Artiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="Artiste">
+              <PropertyRef Name="Id_Personne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Casting__Id_Cont__36B12243">
+          <End Role="Type_de_contrat" Type="Self.Type_de_contrat" Multiplicity="1" />
+          <End Role="Casting" Type="Self.Casting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_de_contrat">
+              <PropertyRef Name="Id_Contrat" />
+            </Principal>
+            <Dependent Role="Casting">
+              <PropertyRef Name="Id_Contrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Casting__Id_Meti__37A5467C">
+          <End Role="Métier" Type="Self.Métier" Multiplicity="1" />
+          <End Role="Casting" Type="Self.Casting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Métier">
+              <PropertyRef Name="Id_Metier" />
+            </Principal>
+            <Dependent Role="Casting">
+              <PropertyRef Name="Id_Metier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Casting__Id_Prof__35BCFE0A">
+          <End Role="Professionnel" Type="Self.Professionnel" Multiplicity="1" />
+          <End Role="Casting" Type="Self.Casting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professionnel">
+              <PropertyRef Name="Id_Professionnel" />
+            </Principal>
+            <Dependent Role="Casting">
+              <PropertyRef Name="Id_Professionnel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Métier__Id_Domai__2A4B4B5E">
+          <End Role="Domaine_de_métier" Type="Self.Domaine_de_métier" Multiplicity="1" />
+          <End Role="Métier" Type="Self.Métier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domaine_de_métier">
+              <PropertyRef Name="Id_Domaine_metier" />
+            </Principal>
+            <Dependent Role="Métier">
+              <PropertyRef Name="Id_Domaine_metier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Participe__Id_Ar__3B75D760">
+          <End Role="Artiste" Type="Self.Artiste" Multiplicity="1" />
+          <End Role="Participer" Type="Self.Participer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artiste">
+              <PropertyRef Name="Id_Artiste" />
+            </Principal>
+            <Dependent Role="Participer">
+              <PropertyRef Name="Id_Artiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Participe__Id_Ca__3A81B327">
+          <End Role="Casting" Type="Self.Casting" Multiplicity="1" />
+          <End Role="Participer" Type="Self.Participer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Casting">
+              <PropertyRef Name="Id_Casting" />
+            </Principal>
+            <Dependent Role="Participer">
+              <PropertyRef Name="Id_Casting" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personne__Id_Civ__2D27B809">
+          <End Role="Civilité" Type="Self.Civilité" Multiplicity="1" />
+          <End Role="Personne" Type="Self.Personne" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Civilité">
+              <PropertyRef Name="Id_Civilite" />
+            </Principal>
+            <Dependent Role="Personne">
+              <PropertyRef Name="Id_Civilite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professio__Id_Pe__32E0915F">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="Professionnel" Type="Self.Professionnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="Professionnel">
+              <PropertyRef Name="Id_Personne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MegacastingModelStoreContainer">
+          <EntitySet Name="Artiste" EntityType="Self.Artiste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Casting" EntityType="Self.Casting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Civilité" EntityType="Self.Civilité" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Domaine_de_métier" EntityType="Self.Domaine_de_métier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Métier" EntityType="Self.Métier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Participer" EntityType="Self.Participer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Professionnel" EntityType="Self.Professionnel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_de_contrat" EntityType="Self.Type_de_contrat" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Artiste__Id_Pers__300424B4" Association="Self.FK__Artiste__Id_Pers__300424B4">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="Artiste" EntitySet="Artiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Casting__Id_Cont__36B12243" Association="Self.FK__Casting__Id_Cont__36B12243">
+            <End Role="Type_de_contrat" EntitySet="Type_de_contrat" />
+            <End Role="Casting" EntitySet="Casting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Casting__Id_Meti__37A5467C" Association="Self.FK__Casting__Id_Meti__37A5467C">
+            <End Role="Métier" EntitySet="Métier" />
+            <End Role="Casting" EntitySet="Casting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Casting__Id_Prof__35BCFE0A" Association="Self.FK__Casting__Id_Prof__35BCFE0A">
+            <End Role="Professionnel" EntitySet="Professionnel" />
+            <End Role="Casting" EntitySet="Casting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Métier__Id_Domai__2A4B4B5E" Association="Self.FK__Métier__Id_Domai__2A4B4B5E">
+            <End Role="Domaine_de_métier" EntitySet="Domaine_de_métier" />
+            <End Role="Métier" EntitySet="Métier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Participe__Id_Ar__3B75D760" Association="Self.FK__Participe__Id_Ar__3B75D760">
+            <End Role="Artiste" EntitySet="Artiste" />
+            <End Role="Participer" EntitySet="Participer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Participe__Id_Ca__3A81B327" Association="Self.FK__Participe__Id_Ca__3A81B327">
+            <End Role="Casting" EntitySet="Casting" />
+            <End Role="Participer" EntitySet="Participer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personne__Id_Civ__2D27B809" Association="Self.FK__Personne__Id_Civ__2D27B809">
+            <End Role="Civilité" EntitySet="Civilité" />
+            <End Role="Personne" EntitySet="Personne" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professio__Id_Pe__32E0915F" Association="Self.FK__Professio__Id_Pe__32E0915F">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="Professionnel" EntitySet="Professionnel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MegacastingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Artiste">
+          <Key>
+            <PropertyRef Name="Id_Artiste" />
+          </Key>
+          <Property Name="Id_Artiste" Type="Int32" Nullable="false" />
+          <Property Name="Id_Personne" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Personne" Relationship="Self.FK__Artiste__Id_Pers__300424B4" FromRole="Artiste" ToRole="Personne" />
+          <NavigationProperty Name="Casting" Relationship="Self.Participer" FromRole="Artiste" ToRole="Casting" />
+        </EntityType>
+        <EntityType Name="Casting">
+          <Key>
+            <PropertyRef Name="Id_Casting" />
+          </Key>
+          <Property Name="Id_Casting" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Intitule" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Reference" Type="Int32" Nullable="false" />
+          <Property Name="Date_debut_publication" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nbr_poste" Type="Int32" Nullable="false" />
+          <Property Name="Localisation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_poste" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_profil" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Coordonnees" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Duree_diffusion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Id_Professionnel" Type="Int32" Nullable="false" />
+          <Property Name="Id_Contrat" Type="Int32" Nullable="false" />
+          <Property Name="Id_Metier" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Type_de_contrat" Relationship="Self.FK__Casting__Id_Cont__36B12243" FromRole="Casting" ToRole="Type_de_contrat" />
+          <NavigationProperty Name="Métier" Relationship="Self.FK__Casting__Id_Meti__37A5467C" FromRole="Casting" ToRole="Métier" />
+          <NavigationProperty Name="Professionnel" Relationship="Self.FK__Casting__Id_Prof__35BCFE0A" FromRole="Casting" ToRole="Professionnel" />
+          <NavigationProperty Name="Artiste" Relationship="Self.Participer" FromRole="Casting" ToRole="Artiste" />
+        </EntityType>
+        <EntityType Name="Civilité">
+          <Key>
+            <PropertyRef Name="Id_Civilite" />
+          </Key>
+          <Property Name="Id_Civilite" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Personne" Relationship="Self.FK__Personne__Id_Civ__2D27B809" FromRole="Civilité" ToRole="Personne" />
+        </EntityType>
+        <EntityType Name="Domaine_de_métier">
+          <Key>
+            <PropertyRef Name="Id_Domaine_metier" />
+          </Key>
+          <Property Name="Id_Domaine_metier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Métier" Relationship="Self.FK__Métier__Id_Domai__2A4B4B5E" FromRole="Domaine_de_métier" ToRole="Métier" />
+        </EntityType>
+        <EntityType Name="Métier">
+          <Key>
+            <PropertyRef Name="Id_Metier" />
+          </Key>
+          <Property Name="Id_Metier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_Domaine_metier" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Casting" Relationship="Self.FK__Casting__Id_Meti__37A5467C" FromRole="Métier" ToRole="Casting" />
+          <NavigationProperty Name="Domaine_de_métier" Relationship="Self.FK__Métier__Id_Domai__2A4B4B5E" FromRole="Métier" ToRole="Domaine_de_métier" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="Id_Personne" />
+          </Key>
+          <Property Name="Id_Personne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Civilite" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artiste" Relationship="Self.FK__Artiste__Id_Pers__300424B4" FromRole="Personne" ToRole="Artiste" />
+          <NavigationProperty Name="Civilité" Relationship="Self.FK__Personne__Id_Civ__2D27B809" FromRole="Personne" ToRole="Civilité" />
+          <NavigationProperty Name="Professionnel" Relationship="Self.FK__Professio__Id_Pe__32E0915F" FromRole="Personne" ToRole="Professionnel" />
+        </EntityType>
+        <EntityType Name="Professionnel">
+          <Key>
+            <PropertyRef Name="Id_Professionnel" />
+          </Key>
+          <Property Name="Id_Professionnel" Type="Int32" Nullable="false" />
+          <Property Name="Id_Personne" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Casting" Relationship="Self.FK__Casting__Id_Prof__35BCFE0A" FromRole="Professionnel" ToRole="Casting" />
+          <NavigationProperty Name="Personne" Relationship="Self.FK__Professio__Id_Pe__32E0915F" FromRole="Professionnel" ToRole="Personne" />
+        </EntityType>
+        <EntityType Name="Type_de_contrat">
+          <Key>
+            <PropertyRef Name="Id_Contrat" />
+          </Key>
+          <Property Name="Id_Contrat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Casting" Relationship="Self.FK__Casting__Id_Cont__36B12243" FromRole="Type_de_contrat" ToRole="Casting" />
+        </EntityType>
+        <Association Name="FK__Artiste__Id_Pers__300424B4">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="Artiste" Type="Self.Artiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="Artiste">
+              <PropertyRef Name="Id_Personne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Casting__Id_Cont__36B12243">
+          <End Role="Type_de_contrat" Type="Self.Type_de_contrat" Multiplicity="1" />
+          <End Role="Casting" Type="Self.Casting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_de_contrat">
+              <PropertyRef Name="Id_Contrat" />
+            </Principal>
+            <Dependent Role="Casting">
+              <PropertyRef Name="Id_Contrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Casting__Id_Meti__37A5467C">
+          <End Role="Métier" Type="Self.Métier" Multiplicity="1" />
+          <End Role="Casting" Type="Self.Casting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Métier">
+              <PropertyRef Name="Id_Metier" />
+            </Principal>
+            <Dependent Role="Casting">
+              <PropertyRef Name="Id_Metier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Casting__Id_Prof__35BCFE0A">
+          <End Role="Professionnel" Type="Self.Professionnel" Multiplicity="1" />
+          <End Role="Casting" Type="Self.Casting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professionnel">
+              <PropertyRef Name="Id_Professionnel" />
+            </Principal>
+            <Dependent Role="Casting">
+              <PropertyRef Name="Id_Professionnel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personne__Id_Civ__2D27B809">
+          <End Role="Civilité" Type="Self.Civilité" Multiplicity="1" />
+          <End Role="Personne" Type="Self.Personne" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Civilité">
+              <PropertyRef Name="Id_Civilite" />
+            </Principal>
+            <Dependent Role="Personne">
+              <PropertyRef Name="Id_Civilite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Métier__Id_Domai__2A4B4B5E">
+          <End Role="Domaine_de_métier" Type="Self.Domaine_de_métier" Multiplicity="1" />
+          <End Role="Métier" Type="Self.Métier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domaine_de_métier">
+              <PropertyRef Name="Id_Domaine_metier" />
+            </Principal>
+            <Dependent Role="Métier">
+              <PropertyRef Name="Id_Domaine_metier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professio__Id_Pe__32E0915F">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="Professionnel" Type="Self.Professionnel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="Professionnel">
+              <PropertyRef Name="Id_Personne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Participer">
+          <End Role="Artiste" Type="Self.Artiste" Multiplicity="*" />
+          <End Role="Casting" Type="Self.Casting" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="MegacastingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Artiste" EntityType="Self.Artiste" />
+          <EntitySet Name="Casting" EntityType="Self.Casting" />
+          <EntitySet Name="Civilité" EntityType="Self.Civilité" />
+          <EntitySet Name="Domaine_de_métier" EntityType="Self.Domaine_de_métier" />
+          <EntitySet Name="Métier" EntityType="Self.Métier" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" />
+          <EntitySet Name="Professionnel" EntityType="Self.Professionnel" />
+          <EntitySet Name="Type_de_contrat" EntityType="Self.Type_de_contrat" />
+          <AssociationSet Name="FK__Artiste__Id_Pers__300424B4" Association="Self.FK__Artiste__Id_Pers__300424B4">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="Artiste" EntitySet="Artiste" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Casting__Id_Cont__36B12243" Association="Self.FK__Casting__Id_Cont__36B12243">
+            <End Role="Type_de_contrat" EntitySet="Type_de_contrat" />
+            <End Role="Casting" EntitySet="Casting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Casting__Id_Meti__37A5467C" Association="Self.FK__Casting__Id_Meti__37A5467C">
+            <End Role="Métier" EntitySet="Métier" />
+            <End Role="Casting" EntitySet="Casting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Casting__Id_Prof__35BCFE0A" Association="Self.FK__Casting__Id_Prof__35BCFE0A">
+            <End Role="Professionnel" EntitySet="Professionnel" />
+            <End Role="Casting" EntitySet="Casting" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personne__Id_Civ__2D27B809" Association="Self.FK__Personne__Id_Civ__2D27B809">
+            <End Role="Civilité" EntitySet="Civilité" />
+            <End Role="Personne" EntitySet="Personne" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Métier__Id_Domai__2A4B4B5E" Association="Self.FK__Métier__Id_Domai__2A4B4B5E">
+            <End Role="Domaine_de_métier" EntitySet="Domaine_de_métier" />
+            <End Role="Métier" EntitySet="Métier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professio__Id_Pe__32E0915F" Association="Self.FK__Professio__Id_Pe__32E0915F">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="Professionnel" EntitySet="Professionnel" />
+          </AssociationSet>
+          <AssociationSet Name="Participer" Association="Self.Participer">
+            <End Role="Artiste" EntitySet="Artiste" />
+            <End Role="Casting" EntitySet="Casting" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MegacastingModelStoreContainer" CdmEntityContainer="MegacastingEntities">
+          <EntitySetMapping Name="Artiste">
+            <EntityTypeMapping TypeName="MegacastingModel.Artiste">
+              <MappingFragment StoreEntitySet="Artiste">
+                <ScalarProperty Name="Id_Artiste" ColumnName="Id_Artiste" />
+                <ScalarProperty Name="Id_Personne" ColumnName="Id_Personne" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Casting">
+            <EntityTypeMapping TypeName="MegacastingModel.Casting">
+              <MappingFragment StoreEntitySet="Casting">
+                <ScalarProperty Name="Id_Casting" ColumnName="Id_Casting" />
+                <ScalarProperty Name="Intitule" ColumnName="Intitule" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Date_debut_publication" ColumnName="Date_debut_publication" />
+                <ScalarProperty Name="Nbr_poste" ColumnName="Nbr_poste" />
+                <ScalarProperty Name="Localisation" ColumnName="Localisation" />
+                <ScalarProperty Name="Description_poste" ColumnName="Description_poste" />
+                <ScalarProperty Name="Description_profil" ColumnName="Description_profil" />
+                <ScalarProperty Name="Coordonnees" ColumnName="Coordonnees" />
+                <ScalarProperty Name="Duree_diffusion" ColumnName="Duree_diffusion" />
+                <ScalarProperty Name="Id_Professionnel" ColumnName="Id_Professionnel" />
+                <ScalarProperty Name="Id_Contrat" ColumnName="Id_Contrat" />
+                <ScalarProperty Name="Id_Metier" ColumnName="Id_Metier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Civilité">
+            <EntityTypeMapping TypeName="MegacastingModel.Civilité">
+              <MappingFragment StoreEntitySet="Civilité">
+                <ScalarProperty Name="Id_Civilite" ColumnName="Id_Civilite" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domaine_de_métier">
+            <EntityTypeMapping TypeName="MegacastingModel.Domaine_de_métier">
+              <MappingFragment StoreEntitySet="Domaine_de_métier">
+                <ScalarProperty Name="Id_Domaine_metier" ColumnName="Id_Domaine_metier" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Métier">
+            <EntityTypeMapping TypeName="MegacastingModel.Métier">
+              <MappingFragment StoreEntitySet="Métier">
+                <ScalarProperty Name="Id_Metier" ColumnName="Id_Metier" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+                <ScalarProperty Name="Id_Domaine_metier" ColumnName="Id_Domaine_metier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personne">
+            <EntityTypeMapping TypeName="MegacastingModel.Personne">
+              <MappingFragment StoreEntitySet="Personne">
+                <ScalarProperty Name="Id_Personne" ColumnName="Id_Personne" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Ville" ColumnName="Ville" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Id_Civilite" ColumnName="Id_Civilite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Professionnel">
+            <EntityTypeMapping TypeName="MegacastingModel.Professionnel">
+              <MappingFragment StoreEntitySet="Professionnel">
+                <ScalarProperty Name="Id_Professionnel" ColumnName="Id_Professionnel" />
+                <ScalarProperty Name="Id_Personne" ColumnName="Id_Personne" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_de_contrat">
+            <EntityTypeMapping TypeName="MegacastingModel.Type_de_contrat">
+              <MappingFragment StoreEntitySet="Type_de_contrat">
+                <ScalarProperty Name="Id_Contrat" ColumnName="Id_Contrat" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Participer" TypeName="MegacastingModel.Participer" StoreEntitySet="Participer">
+            <EndProperty Name="Artiste">
+              <ScalarProperty Name="Id_Artiste" ColumnName="Id_Artiste" />
+            </EndProperty>
+            <EndProperty Name="Casting">
+              <ScalarProperty Name="Id_Casting" ColumnName="Id_Casting" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
