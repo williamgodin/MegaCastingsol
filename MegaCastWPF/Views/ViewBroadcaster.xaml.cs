@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCastWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace MegaCastWPF.Views
         public ViewBroadcaster()
         {
             InitializeComponent();
+        }
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelBroadcaster)this.DataContext).AddItem();
+        }
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelBroadcaster)this.DataContext).SaveItem();
+        }
+        private void DelButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelBroadcaster)this.DataContext).DelItem();
         }
     }
 }

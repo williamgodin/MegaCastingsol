@@ -1,7 +1,6 @@
 ﻿CREATE TABLE [dbo].[Professionnel] (
-    [Id_Professionnel] INT NOT NULL,
     [Id_Personne]      INT NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id_Professionnel] ASC),
+    PRIMARY KEY CLUSTERED ([Id_Personne] ASC),
     FOREIGN KEY ([Id_Personne]) REFERENCES [dbo].[Personne] ([Id_Personne])
 );
 

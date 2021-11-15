@@ -12,7 +12,7 @@ namespace Megacasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class Artiste
+    public partial class Artiste : Personne
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Artiste()
@@ -20,10 +20,7 @@ namespace Megacasting.DBLib
             this.Casting = new HashSet<Casting>();
         }
     
-        public int Id_Artiste { get; set; }
-        public int Id_Personne { get; set; }
     
-        public virtual Personne Personne { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Casting> Casting { get; set; }
     }

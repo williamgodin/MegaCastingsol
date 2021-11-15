@@ -12,15 +12,8 @@ namespace Megacasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class Personne
+    public abstract partial class Personne
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Personne()
-        {
-            this.Artiste = new HashSet<Artiste>();
-            this.Professionnel = new HashSet<Professionnel>();
-        }
-    
         public int Id_Personne { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
@@ -30,10 +23,6 @@ namespace Megacasting.DBLib
         public string Telephone { get; set; }
         public int Id_Civilite { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Artiste> Artiste { get; set; }
         public virtual Civilité Civilité { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Professionnel> Professionnel { get; set; }
     }
 }

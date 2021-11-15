@@ -19,20 +19,20 @@ namespace MegaCastWPF.ViewModel
         /// <summary>
         /// Broadcater
         /// </summary>
-        private Professionnel _SelectedItem;
+        private Personne _SelectedItem;
 
         /// <summary>
         /// Liste des broadcaster
         /// </summary>
-        public ObservableCollection<Professionnel> _Items;
+        public ObservableCollection<Personne> _Items;
         #endregion
         #region Properties
-        public Professionnel SelectedItem
+        public Personne SelectedItem
         {
             get { return _SelectedItem; }
             set { _SelectedItem = value; }
         }
-        public ObservableCollection<Professionnel> Items
+        public ObservableCollection<Personne> Items
         {
             get { return _Items; }
             set { _Items = value; }
@@ -41,7 +41,39 @@ namespace MegaCastWPF.ViewModel
         #region Builder
         public ViewModelBroadcaster() : base()
         {
-            this.Items = this.Entities.Professionnel.Local;
+            this.Entities.Personne.ToList();
+            this.Items = this.Entities.Personne.Local;
+        }
+        #endregion
+        #region Method
+        public void AddItem()
+        {
+            Professionnel professionnel = new Professionnel();
+            professionnel.Nom = "Nouveau Nom";
+            professionnel.Prenom = "Nouvelle Prenom";
+            professionnel.Ville = "Nouvelle Ville";
+            professionnel.Adresse = "Nouvelle Adresse";
+            professionnel.Email = "Nouvelle Email";
+            professionnel.Id_Civilite = 1;
+
+
+            this.SelectedItem = professionnel;
+            this.Entities.Personne.Add(professionnel);
+            this.Entities.SaveChanges();
+
+        }
+        public void SaveItem()
+        {
+            this.Entities.SaveChanges();
+        }
+        public void DelItem()
+        {
+            if(SelectedItem != null)
+            {
+                this.Entities.Personne.Remove(SelectedItem);
+                this.Entities.SaveChanges();
+            }
+
         }
         #endregion
 

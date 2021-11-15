@@ -24,6 +24,9 @@ namespace MegaCastWPF.ViewModel
             set { _Entities = value; }
         }
         #endregion
-
+        public ViewModelViewBase()
+        {
+            this.Entities = new MegacastingEntities();
+        }
     }
 }

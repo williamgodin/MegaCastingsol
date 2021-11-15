@@ -15,6 +15,6 @@
     PRIMARY KEY CLUSTERED ([Id_Casting] ASC),
     FOREIGN KEY ([Id_Contrat]) REFERENCES [dbo].[Type_de_contrat] ([Id_Contrat]),
     FOREIGN KEY ([Id_Metier]) REFERENCES [dbo].[Métier] ([Id_Metier]),
-    FOREIGN KEY ([Id_Professionnel]) REFERENCES [dbo].[Professionnel] ([Id_Professionnel])
+    FOREIGN KEY ([Id_Professionnel]) REFERENCES [dbo].[Professionnel] ([Id_Personne])
 );
 

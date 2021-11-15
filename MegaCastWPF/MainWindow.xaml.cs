@@ -1,4 +1,5 @@
-﻿using MegaCastWPF.Views;
+﻿using MegaCastWPF.ViewModel;
+using MegaCastWPF.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,10 +44,14 @@ namespace MegaCastWPF
 
         }
 
-        private void BurttonBroadcasteur_Click(object sender, RoutedEventArgs e)
+        private void ButtonBroadcasteur_Click(object sender, RoutedEventArgs e)
         {
             this.DockPanel.Children.Clear();
-            this.DockPanel.Children.Add(new ViewBroadcaster());
+            ViewModelBroadcaster vm = new ViewModelBroadcaster();
+            ViewBroadcaster view = new ViewBroadcaster();
+            view.DataContext = vm;
+
+            this.DockPanel.Children.Add(view);
         }
     }
 }

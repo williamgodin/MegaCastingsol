@@ -71,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
     <Compile Include="ViewModel\ViewModelViewMain.cs" />
