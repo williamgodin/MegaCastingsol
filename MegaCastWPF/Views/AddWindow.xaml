@@ -11,8 +11,9 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="100pt"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="150pt"/>
+            <ColumnDefinition Width="10pt"/>
+            <ColumnDefinition Width="150pt"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -37,13 +38,13 @@
         <Label Grid.Row="6" Grid.Column="1" Content="Email :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
         <Label Grid.Row="7" Grid.Column="1" Content="Téléphone :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
 
-        <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Civilites, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Genre"  SelectedItem="{Binding Proxy.Civilite}" HorizontalAlignment="Left" Width="163" />
-        <TextBox Grid.Row="2" Grid.Column="2" Name="TextboxFirstname" materialDesign:HintAssist.Hint="Saisir le nom"  FontSize="20"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Name="TextboxLastname" materialDesign:HintAssist.Hint="Saisir le prénom" FontSize="20"/>
-        <TextBox Grid.Row="4" Grid.Column="2" Name="TextboxCity" materialDesign:HintAssist.Hint="Saisir la ville" FontSize="20"/>
-        <TextBox Grid.Row="5" Grid.Column="2" Name="TextboxAdress" materialDesign:HintAssist.Hint="Saisir l'adresse" FontSize="20"/>
-        <TextBox Grid.Row="6" Grid.Column="2" Name="TextboxMail" materialDesign:HintAssist.Hint="Saisir l'email" FontSize="20"/>
-        <TextBox Grid.Row="7" Grid.Column="2" Name="TextboxPhone" materialDesign:HintAssist.Hint="Saisir le téléphone" FontSize="20"/>
+        <ComboBox Grid.Row="1" Grid.Column="3" ItemsSource="{Binding Civilites, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Genre"  SelectedItem="{Binding Proxy.Civilite}" HorizontalAlignment="Left" Width="163" />
+        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Proxy.Lastname}" materialDesign:HintAssist.Hint="Saisir le nom"  FontSize="20"/>
+        <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Proxy.Firstname}" materialDesign:HintAssist.Hint="Saisir le prénom" FontSize="20"/>
+        <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding Proxy.City}" materialDesign:HintAssist.Hint="Saisir la ville" FontSize="20"/>
+        <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Proxy.Address}" materialDesign:HintAssist.Hint="Saisir l'adresse" FontSize="20"/>
+        <TextBox Grid.Row="6" Grid.Column="3" Text="{Binding Proxy.Email}" materialDesign:HintAssist.Hint="Saisir l'email" FontSize="20"/>
+        <TextBox Grid.Row="7" Grid.Column="3" Text="{Binding Proxy.Phone}" materialDesign:HintAssist.Hint="Saisir le téléphone" FontSize="20"/>
         <!--#endregion-->
         <!--#region Button-->
         <Button Grid.Row="10" Grid.Column="1" 
@@ -52,10 +53,10 @@
                 Foreground="White" 
                 Name="ButtonSave" 
                 Click="SaveButtonAddWindow_Click"/>
-        <!--<Button Grid.Row="10" Grid.Column="1" 
+        <Button Grid.Row="10" Grid.Column="3" 
                 IsCancel="True"
-                Content="Sauvegarder" 
-                Foreground="White"  />-->
+                Content="Annuler" 
+                Foreground="White"  />
         <!--#endregion-->
     </Grid>
 </Window>

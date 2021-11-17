@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +71,7 @@ namespace MegaCastWPF.ViewModel
             {
                 Professionnel professionnel = new Professionnel();
                 professionnel.Civilité = vm.Proxy.Civilite;
+                professionnel.Id_Civilite = vm.Proxy.Civilite.Id_Civilite ;
                 professionnel.Nom = vm.Proxy.Lastname;
                 professionnel.Prenom = vm.Proxy.Firstname;
                 professionnel.Ville = vm.Proxy.City;
@@ -80,6 +82,7 @@ namespace MegaCastWPF.ViewModel
                 this.SelectedItem = professionnel;
                 this.Entities.Personne.Add(professionnel);
                 this.Entities.SaveChanges();
+                
             }
         }
         public void SaveItem()
