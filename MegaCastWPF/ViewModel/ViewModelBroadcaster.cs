@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Megacasting.DBLib;
+using MegaCastWPF.Views;
 
 namespace MegaCastWPF.ViewModel
 {
@@ -25,6 +26,11 @@ namespace MegaCastWPF.ViewModel
         /// Liste des broadcaster
         /// </summary>
         public ObservableCollection<Personne> _Items;
+
+        private List<Civilité> _civilite;
+
+        
+
         #endregion
         #region Properties
         public Personne SelectedItem
@@ -37,6 +43,11 @@ namespace MegaCastWPF.ViewModel
             get { return _Items; }
             set { _Items = value; }
         }
+        public List<Civilité> civilite
+        {
+            get { return _civilite; }
+            set { _civilite = value; }
+        }
         #endregion
         #region Builder
         public ViewModelBroadcaster() : base()
@@ -46,22 +57,30 @@ namespace MegaCastWPF.ViewModel
         }
         #endregion
         #region Method
+
         public void AddItem()
         {
+            this.Entities.Civilité.ToList();
+            ViewModelAddWindow vm = new ViewModelAddWindow(this.Entities.Civilité.Local);
+            AddWindow addwindow = new AddWindow();
+            addwindow.DataContext = vm;
+            addwindow.ShowDialog();
 
-            Professionnel professionnel = new Professionnel();
-            professionnel.Nom = "Nouveau Nom";
-            professionnel.Prenom = "Nouvelle Prenom";
-            professionnel.Ville = "Nouvelle Ville";
-            professionnel.Adresse = "Nouvelle Adresse";
-            professionnel.Email = "Nouvelle Email";
-            professionnel.Id_Civilite = 1;
+            if (addwindow.DialogResult.Value)
+            {
+                Professionnel professionnel = new Professionnel();
+                professionnel.Civilité = vm.Proxy.Civilite;
+                professionnel.Nom = vm.Proxy.Lastname;
+                professionnel.Prenom = vm.Proxy.Firstname;
+                professionnel.Ville = vm.Proxy.City;
+                professionnel.Adresse = vm.Proxy.Address;
+                professionnel.Email = vm.Proxy.Email;
+                professionnel.Telephone = vm.Proxy.Phone;
 
-
-            this.SelectedItem = professionnel;
-            this.Entities.Personne.Add(professionnel);
-            this.Entities.SaveChanges();
-
+                this.SelectedItem = professionnel;
+                this.Entities.Personne.Add(professionnel);
+                this.Entities.SaveChanges();
+            }
         }
         public void SaveItem()
         {
@@ -76,6 +95,7 @@ namespace MegaCastWPF.ViewModel
             }
 
         }
+
         #endregion
 
 

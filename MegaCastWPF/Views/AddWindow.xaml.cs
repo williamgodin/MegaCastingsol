@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCastWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace MegaCastWPF.Views
         public AddWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void SaveButtonAddWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.Close();
         }
     }
 }
