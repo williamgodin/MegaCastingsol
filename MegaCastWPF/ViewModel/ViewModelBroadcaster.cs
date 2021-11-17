@@ -48,6 +48,7 @@ namespace MegaCastWPF.ViewModel
         #region Method
         public void AddItem()
         {
+
             Professionnel professionnel = new Professionnel();
             professionnel.Nom = "Nouveau Nom";
             professionnel.Prenom = "Nouvelle Prenom";

@@ -20,10 +20,10 @@
 
 
         <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" ItemsSource="{Binding Items}" DisplayMemberPath="Nom" SelectedItem="{Binding SelectedItem}">
-            
+
         </ListBox>
         <Button Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Content="Ajouter" Name="ButtonAdd" Click="AddButton_Click"/>
-        <GroupBox Header="{Binding SelectedItem}" Grid.Row="0" Grid.Column="3" Visibility="{Binding SelectedItem, Converter={StaticResource _ShareObjectToVisibilityConverter}}">
+        <GroupBox Header="{Binding SelectedItem}" Grid.Row="0" Grid.Column="1" Visibility="{Binding SelectedItem, Converter={StaticResource _ShareObjectToVisibilityConverter}}" Margin="0,0,0,106" Grid.RowSpan="3">
             <GroupBox.HeaderTemplate>
                 <DataTemplate>
                     <Grid>
@@ -37,39 +37,41 @@
                     </Grid>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="100pt"/>
-                        <ColumnDefinition Width="100pt"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="50pt" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100pt"/>
+                    <ColumnDefinition Width="100pt"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="1" Content="Nom :"/>
-                <Label Grid.Row="0" Grid.Column="1" Content="Prénom :"/>
-                <Label Grid.Row="0" Grid.Column="1" Content="Ville :"/>
-                <Label Grid.Row="0" Grid.Column="1" Content="Adresse :"/>
-                <Label Grid.Row="0" Grid.Column="1" Content="Email :"/>
-                <Label Grid.Row="1" Grid.Column="1" Content="Actif :"/>
+                <Label Grid.Row="1" Grid.Column="1" Content="Prénom :"/>
+                <Label Grid.Row="2" Grid.Column="1" Content="Ville :"/>
+                <Label Grid.Row="3" Grid.Column="1" Content="Adresse :"/>
+                <Label Grid.Row="4" Grid.Column="1" Content="Email :"/>
+                <Label Grid.Row="5" Grid.Column="1" Content="Actif :"/>
 
                 <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding SelectedItem.Nom}"/>
                 <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding SelectedItem.Prenom}"/>
                 <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding SelectedItem.Ville}"/>
                 <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding SelectedItem.Adresse}"/>
                 <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding SelectedItem.Email}"/>
-                <CheckBox Grid.Row="1" Grid.Column="2" ></CheckBox>
-                <Button Grid.Row="3" Grid.Column="1" Content="Sauvegarder" Foreground="White" Name="ButtonSave" Click="SaveButton_Click"/>
-                <Button Grid.Row="3" Grid.Column="2" Content="Supprimer" Foreground="White" Name="ButtonDel" Click="DelButton_Click"/>
+                <CheckBox Grid.Row="5" Grid.Column="2" ></CheckBox>
+
+                <Button Grid.Row="6" Grid.Column="1" Content="Sauvegarder" Foreground="White" Name="ButtonSave" Click="SaveButton_Click"/>
+                <Button Grid.Row="6" Grid.Column="2" Content="Supprimer" Foreground="White" Name="ButtonDel" Click="DelButton_Click"/>
             </Grid>
         </GroupBox>
-        
+
 
 
 
