@@ -4,16 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MegaCastWPF.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="AddWindow" Height="450" Width="800">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="100pt"/>
-            <ColumnDefinition Width="100pt"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -21,21 +23,39 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-        <Label Grid.Row="1" Grid.Column="1" Content="Nom :"/>
-        <Label Grid.Row="2" Grid.Column="1" Content="Prenom :"/>
-        <Label Grid.Row="3" Grid.Column="1" Content="Ville :"/>
-        <Label Grid.Row="4" Grid.Column="1" Content="Adresse :"/>
-        <Label Grid.Row="5" Grid.Column="1" Content="Email :"/>
-        <Label Grid.Row="6" Grid.Column="1" Content="Téléphone :"/>
+        </Grid.RowDefinitions>
+        <!--#region Text-->
+        <Label Grid.Row="1" Grid.Column="1" Content="Civilité :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="Nom :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
+        <Label Grid.Row="3" Grid.Column="1" Content="Prenom :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
+        <Label Grid.Row="4" Grid.Column="1" Content="Ville :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
+        <Label Grid.Row="5" Grid.Column="1" Content="Adresse :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
+        <Label Grid.Row="6" Grid.Column="1" Content="Email :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
+        <Label Grid.Row="7" Grid.Column="1" Content="Téléphone :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
 
-        <TextBox Grid.Row="1" Grid.Column="2" Text="Saisir le nom"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="Saisir le prénom"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Text="Saisir la ville"/>
-        <TextBox Grid.Row="4" Grid.Column="2" Text="Saisir le l'adresse"/>
-        <TextBox Grid.Row="5" Grid.Column="2" Text="Saisir l'email"/>
-        <TextBox Grid.Row="6" Grid.Column="2" Text="Saisir le téléphone"/>
-            
-        </Grid>
+        <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Civilites, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Genre"  SelectedItem="{Binding Proxy.Civilite}" HorizontalAlignment="Left" Width="163" />
+        <TextBox Grid.Row="2" Grid.Column="2" Name="TextboxFirstname" materialDesign:HintAssist.Hint="Saisir le nom"  FontSize="20"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Name="TextboxLastname" materialDesign:HintAssist.Hint="Saisir le prénom" FontSize="20"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Name="TextboxCity" materialDesign:HintAssist.Hint="Saisir la ville" FontSize="20"/>
+        <TextBox Grid.Row="5" Grid.Column="2" Name="TextboxAdress" materialDesign:HintAssist.Hint="Saisir l'adresse" FontSize="20"/>
+        <TextBox Grid.Row="6" Grid.Column="2" Name="TextboxMail" materialDesign:HintAssist.Hint="Saisir l'email" FontSize="20"/>
+        <TextBox Grid.Row="7" Grid.Column="2" Name="TextboxPhone" materialDesign:HintAssist.Hint="Saisir le téléphone" FontSize="20"/>
+        <!--#endregion-->
+        <!--#region Button-->
+        <Button Grid.Row="10" Grid.Column="1" 
+                Content="Sauvegarder" 
+                IsDefault="True"
+                Foreground="White" 
+                Name="ButtonSave" 
+                Click="SaveButtonAddWindow_Click"/>
+        <!--<Button Grid.Row="10" Grid.Column="1" 
+                IsCancel="True"
+                Content="Sauvegarder" 
+                Foreground="White"  />-->
+        <!--#endregion-->
+    </Grid>
 </Window>
