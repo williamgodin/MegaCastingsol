@@ -79,6 +79,8 @@
     <Compile Include="ViewModel\ViewModelAddWindowBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelModifWindowCasting.cs" />
     <Compile Include="ViewModel\ViewModelAddWindowCasting.cs" />
+    <Compile Include="Proxy\PersonProxy.cs" />
+    <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelCasting.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
@@ -92,11 +94,17 @@
     <Compile Include="Views\ViewCasting.xaml.cs">
       <DependentUpon>ViewCasting.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewArtist.xaml.cs">
+      <DependentUpon>ViewArtist.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewBroadcaster.xaml.cs">
       <DependentUpon>ViewBroadcaster.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Artiste\AddArtistWindow.xaml.cs">
+      <DependentUpon>AddArtistWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ModifViews\ViewModifCasting.xaml.cs">
       <DependentUpon>ViewModifCasting.xaml</DependentUpon>
@@ -125,6 +133,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ViewArtist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewBroadcaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ModifViews\ViewModifCasting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Artiste\AddArtistWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
