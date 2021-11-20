@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MegaCastWPF.Views"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
         mc:Ignorable="d"
         Title="AddWindow" Height="450" Width="800">
     <Grid>
@@ -23,6 +25,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Ajouter un professionel" FontSize="26" VerticalAlignment="Center"></TextBlock>
         <Label Grid.Row="1" Grid.Column="1" Content="Nom :"/>
         <Label Grid.Row="2" Grid.Column="1" Content="Prenom :"/>
         <Label Grid.Row="3" Grid.Column="1" Content="Ville :"/>
@@ -30,12 +33,12 @@
         <Label Grid.Row="5" Grid.Column="1" Content="Email :"/>
         <Label Grid.Row="6" Grid.Column="1" Content="Téléphone :"/>
 
-        <TextBox Grid.Row="1" Grid.Column="2" Text="Saisir le nom"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="Saisir le prénom"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Text="Saisir la ville"/>
-        <TextBox Grid.Row="4" Grid.Column="2" Text="Saisir le l'adresse"/>
-        <TextBox Grid.Row="5" Grid.Column="2" Text="Saisir l'email"/>
-        <TextBox Grid.Row="6" Grid.Column="2" Text="Saisir le téléphone"/>
+        <TextBox Grid.Row="1" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir un nom"/>
+        <TextBox Grid.Row="2" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir une prénom"/>
+        <TextBox Grid.Row="3" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir une ville"/>
+        <TextBox Grid.Row="4" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir une adresse "/>
+        <TextBox Grid.Row="5" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir un Email"/>
+        <TextBox Grid.Row="6" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir un Telephone"/>
             
         </Grid>
 </Window>

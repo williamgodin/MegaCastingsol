@@ -28,7 +28,7 @@ namespace MegaCastWPF.Views
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             AddWindow addwindow = new AddWindow();
-            addwindow.Show();
+            addwindow.ShowDialog();
             ((ViewModelBroadcaster)this.DataContext).AddItem();
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)

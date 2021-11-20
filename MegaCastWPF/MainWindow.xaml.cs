@@ -50,8 +50,19 @@ namespace MegaCastWPF
             ViewModelBroadcaster vm = new ViewModelBroadcaster();
             ViewBroadcaster view = new ViewBroadcaster();
             view.DataContext = vm;
+                
+            this.DockPanel.Children.Add(view);
+        }
+
+        private void ButtonArtist_Click(object sender, RoutedEventArgs e)
+        {
+            this.DockPanel.Children.Clear();
+            ViewModelArtist vm = new ViewModelArtist();
+            ViewArtist view = new ViewArtist();
+            view.DataContext = vm;
 
             this.DockPanel.Children.Add(view);
+
         }
     }
 }

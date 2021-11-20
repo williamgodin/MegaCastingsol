@@ -1,25 +1,20 @@
-﻿using System;
+﻿using Megacasting.DBLib;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Megacasting.DBLib;
 
 namespace MegaCastWPF.ViewModel
 {
-
-    /// <summary>
-    /// Modèle-vue pour la vue d'un diffuseur
-    /// </summary>
-    class ViewModelBroadcaster : ViewModelViewBase
+    class ViewModelArtist : ViewModelViewBase
     {
-
         #region Fields
         /// <summary>
         /// Broadcater
         /// </summary>
-        private Personne _SelectedItem; 
+        private Personne _SelectedItem;
 
         /// <summary>
         /// Liste des broadcaster
@@ -38,9 +33,10 @@ namespace MegaCastWPF.ViewModel
             set { _Items = value; }
         }
         #endregion
-        #region Builder
-        public ViewModelBroadcaster() : base()
+        #region Constructor
+        public ViewModelArtist() : base()
         {
+            
             this.Entities.Personne.ToList();
             this.Items = this.Entities.Personne.Local;
         }
@@ -49,17 +45,16 @@ namespace MegaCastWPF.ViewModel
         public void AddItem()
         {
 
-            Professionnel professionnel = new Professionnel();
-            professionnel.Nom = "Nouveau Nom";
-            professionnel.Prenom = "Nouvelle Prenom";
-            professionnel.Ville = "Nouvelle Ville";
-            professionnel.Adresse = "Nouvelle Adresse";
-            professionnel.Email = "Nouvelle Email";
-            professionnel.Id_Civilite = 1;
+            Artiste artiste = new Artiste();
+            artiste.Nom = "Nouveau Nom";
+            artiste.Prenom = "Nouvelle Prenom";
+            artiste.Ville = "Nouvelle Ville";
+            artiste.Adresse = "Nouvelle Adresse";
+            artiste.Email = "Nouvelle Email";
+            artiste.Id_Civilite = 1;
 
-
-            this.SelectedItem = professionnel;
-            this.Entities.Personne.Add(professionnel);
+            this.SelectedItem = artiste;
+            this.Entities.Personne.Add(artiste);
             this.Entities.SaveChanges();
 
         }
@@ -69,16 +64,13 @@ namespace MegaCastWPF.ViewModel
         }
         public void DelItem()
         {
-            if(SelectedItem != null)
+            if (SelectedItem != null)
             {
                 this.Entities.Personne.Remove(SelectedItem);
                 this.Entities.SaveChanges();
             }
+
         }
         #endregion
-
-
-
-
     }
 }
