@@ -39,6 +39,5 @@
         <TextBox Grid.Row="4" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir une adresse "/>
         <TextBox Grid.Row="5" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir un Email"/>
         <TextBox Grid.Row="6" Grid.Column="2" materialDesign:HintAssist.Hint="Saisir un Telephone"/>
-            
-        </Grid>
+    </Grid>
 </Window>

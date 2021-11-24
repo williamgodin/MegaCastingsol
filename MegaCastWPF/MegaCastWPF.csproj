@@ -72,9 +72,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
-    <Compile Include="Proxy\PersonProxy.cs" />
+    <Compile Include="Proxy\AddProxy.cs" />
+    <Compile Include="ViewModel\ViewModelAddWindow.cs" />
     <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
+    <Compile Include="ViewModel\ViewModelRecruiter.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
     <Compile Include="ViewModel\ViewModelViewMain.cs" />
     <Compile Include="Views\AddWindow.xaml.cs">

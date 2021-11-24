@@ -34,8 +34,12 @@ namespace MegaCastWPF.Windows.Artiste
 
         private void ButtonValider_Click(object sender, RoutedEventArgs e)
         {
-
             this.DialogResult = true;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

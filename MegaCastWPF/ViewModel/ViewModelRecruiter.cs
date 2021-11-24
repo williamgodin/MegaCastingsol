@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCastWPF.Proxy
+namespace MegaCastWPF.ViewModel
 {
-    class PersonProxy
+    class ViewModelRecruiter : ViewModelViewBase
     {
-        public string Nom { get; set; }
     }
 }
