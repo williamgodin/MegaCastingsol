@@ -80,9 +80,11 @@
     <Compile Include="ViewModel\ViewModelModifWindowCasting.cs" />
     <Compile Include="ViewModel\ViewModelAddWindowCasting.cs" />
     <Compile Include="Proxy\PersonProxy.cs" />
+    <Compile Include="ViewModel\ViewModelAddWindow.cs" />
     <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelCasting.cs" />
+    <Compile Include="ViewModel\ViewModelRecruiter.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
     <Compile Include="ViewModel\ViewModelViewMain.cs" />
     <Compile Include="Views\AddViews\AddWindowBroadcaster.xaml.cs">
