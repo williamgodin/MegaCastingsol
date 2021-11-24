@@ -80,6 +80,9 @@
     <Compile Include="Views\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewOffresCasting.xaml.cs">
+      <DependentUpon>ViewOffresCasting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewBroadcaster.xaml.cs">
       <DependentUpon>ViewBroadcaster.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewOffresCasting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
