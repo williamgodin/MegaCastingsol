@@ -69,22 +69,22 @@ namespace MegaCastWPF.ViewModel
             AddArtistWindow addArtistWindow = new AddArtistWindow();
             addArtistWindow.DataContext = vm;
 
-            //Artiste artiste = new Artiste();
-            //artiste.Nom = "Nouveau Nom";
-            //artiste.Prenom = "Nouvelle Prenom";
-            //artiste.Ville = "Nouvelle Ville";
-            //artiste.Adresse = "Nouvelle Adresse";
-            //artiste.Email = "Nouvelle Email";
-            //artiste.Id_Civilite = 1;
+            Artiste artiste = new Artiste();
+            artiste.Nom = "Nouveau Nom";
+            artiste.Prenom = "Nouvelle Prenom";
+            artiste.Ville = "Nouvelle Ville";
+            artiste.Adresse = "Nouvelle Adresse";
+            artiste.Email = "Nouvelle Email";
+            artiste.Id_Civilite = 1;
 
 
 
-            //this.SelectedItem = artiste;
-            //this.Entities.Personne.Add(artiste);
-            //this.Entities.SaveChanges();
+            this.SelectedItem = artiste;
+            this.Entities.Personne.Add(artiste);
+            this.Entities.SaveChanges();
             if (addArtistWindow.DialogResult.Value)
             {
-                Artiste artiste = new Artiste();
+                //Artiste artiste = new Artiste();
                 artiste.Civilité = vm.Proxy.Civilite;
                 artiste.Nom = vm.Proxy.FirstName;
                 artiste.Prenom = vm.Proxy.LastName;

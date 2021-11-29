@@ -15,6 +15,7 @@ using MegaCastWPF.ViewModel;
 using Megacasting.DBLib;
 
 
+
 namespace MegaCastWPF.Windows.Artiste
 {
     /// <summary>
@@ -22,9 +23,12 @@ namespace MegaCastWPF.Windows.Artiste
     /// </summary>
     public partial class AddArtistWindow : Window
     {
+        
         public AddArtistWindow()
         {
             InitializeComponent();
+            Megacasting.DBLib.Artiste artiste = new Megacasting.DBLib.Artiste();
+            this.DataContext = artiste;
         }
 
         private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
