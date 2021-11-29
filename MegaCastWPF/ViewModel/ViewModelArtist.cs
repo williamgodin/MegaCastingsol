@@ -1,32 +1,38 @@
-﻿using Megacasting.DBLib;
-using MegaCastWPF.Proxy;
-using MegaCastWPF.Views;
-using MegaCastWPF.Windows.Artiste;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Megacasting.DBLib;
+using MegaCastWPF.Views;
+using MegaCastWPF.Windows.Artiste;
 
 namespace MegaCastWPF.ViewModel
 {
+
+    /// <summary>
+    /// Modèle-vue pour la vue d'un diffuseur
+    /// </summary>
     class ViewModelArtist : ViewModelViewBase
     {
+
         #region Fields
         /// <summary>
-        /// artiste
+        /// Broadcater
         /// </summary>
         private Personne _SelectedItem;
 
         /// <summary>
-        /// Liste des artistes
+        /// Liste des broadcaster
         /// </summary>
         public ObservableCollection<Personne> _Items;
 
-        private AddProxy _Proxy;
+        private List<Civilité> _civilite;
 
-        private ObservableCollection<Civilité> _Civilités;
+
+
         #endregion
         #region Properties
         public Personne SelectedItem
@@ -39,55 +45,35 @@ namespace MegaCastWPF.ViewModel
             get { return _Items; }
             set { _Items = value; }
         }
-
-
-        public ObservableCollection<Civilité> Civilites
+        public List<Civilité> civilite
         {
-            get { return _Civilités; }
-            set { _Civilités = value; }
-        }
-
-
-        public AddProxy Proxy
-        {
-            get { return _Proxy; }
-            set { _Proxy = value; }
+            get { return _civilite; }
+            set { _civilite = value; }
         }
         #endregion
-        #region Constructor
+        #region Builder
         public ViewModelArtist() : base()
-        {
-            
-        }
-        #endregion
-        #region Method
-        public void AddItem()
         {
             this.Entities.Personne.ToList();
             this.Items = this.Entities.Personne.Local;
+        }
+        #endregion
+        #region Method
+
+        public void AddItem()
+        {
+            this.Entities.Civilité.ToList();
             ViewModelAddWindow vm = new ViewModelAddWindow(this.Entities.Civilité.Local);
             AddArtistWindow addArtistWindow = new AddArtistWindow();
             addArtistWindow.DataContext = vm;
 
-            Artiste artiste = new Artiste();
-            artiste.Nom = "Nouveau Nom";
-            artiste.Prenom = "Nouvelle Prenom";
-            artiste.Ville = "Nouvelle Ville";
-            artiste.Adresse = "Nouvelle Adresse";
-            artiste.Email = "Nouvelle Email";
-            artiste.Id_Civilite = 1;
-
-
-
-            this.SelectedItem = artiste;
-            this.Entities.Personne.Add(artiste);
-            this.Entities.SaveChanges();
             if (addArtistWindow.DialogResult.Value)
             {
-                //Artiste artiste = new Artiste();
+                Artiste artiste = new Artiste();
                 artiste.Civilité = vm.Proxy.Civilite;
-                artiste.Nom = vm.Proxy.FirstName;
-                artiste.Prenom = vm.Proxy.LastName;
+                artiste.Id_Civilite = vm.Proxy.Civilite.Id_Civilite;
+                artiste.Nom = vm.Proxy.Lastname;
+                artiste.Prenom = vm.Proxy.Firstname;
                 artiste.Ville = vm.Proxy.City;
                 artiste.Adresse = vm.Proxy.Address;
                 artiste.Email = vm.Proxy.Email;
@@ -96,6 +82,7 @@ namespace MegaCastWPF.ViewModel
                 this.SelectedItem = artiste;
                 this.Entities.Personne.Add(artiste);
                 this.Entities.SaveChanges();
+
             }
         }
         public void SaveItem()
@@ -109,7 +96,16 @@ namespace MegaCastWPF.ViewModel
                 this.Entities.Personne.Remove(SelectedItem);
                 this.Entities.SaveChanges();
             }
+
         }
+
         #endregion
+
+
+
+
     }
 }
+
+
+

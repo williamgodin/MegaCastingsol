@@ -34,7 +34,7 @@
         <Label Grid.Row="6" Grid.Column="1" Content="Email :"/>
         <Label Grid.Row="7" Grid.Column="1" Content="Téléphone :"/>
 
-        <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Civilite, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Genre"  SelectedItem="{Binding Proxy.Civilite}" HorizontalAlignment="Left" Width="125" SelectionChanged="ComboBox_SelectionChanged">
+        <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Civilites, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Genre"  SelectedItem="{Binding Proxy.Civilite}" HorizontalAlignment="Left" Width="125" >
             <ComboBoxItem>Monsieur</ComboBoxItem>
             <ComboBoxItem>Madame</ComboBoxItem>
         </ComboBox>
