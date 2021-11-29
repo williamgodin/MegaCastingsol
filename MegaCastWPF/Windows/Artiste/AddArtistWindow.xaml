@@ -34,16 +34,16 @@
         <Label Grid.Row="6" Grid.Column="1" Content="Email :"/>
         <Label Grid.Row="7" Grid.Column="1" Content="Téléphone :"/>
 
-        <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Civilites, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Genre"  SelectedItem="{Binding Proxy.Civilite}" HorizontalAlignment="Left" Width="125" SelectionChanged="ComboBox_SelectionChanged">
+        <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Civilite, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Genre"  SelectedItem="{Binding Proxy.Civilite}" HorizontalAlignment="Left" Width="125" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem>Monsieur</ComboBoxItem>
             <ComboBoxItem>Madame</ComboBoxItem>
         </ComboBox>
-        <TextBox Grid.Row="2" Grid.Column="2"  materialDesign:HintAssist.Hint="Saisir un nom"/>
-        <TextBox Grid.Row="3" Grid.Column="2"  materialDesign:HintAssist.Hint="Saisir un prénom"/>
-        <TextBox Grid.Row="4" Grid.Column="2"  materialDesign:HintAssist.Hint="Saisir une ville"/>
-        <TextBox Grid.Row="5" Grid.Column="2"  materialDesign:HintAssist.Hint="Saisir l'adresse"/>
-        <TextBox Grid.Row="6" Grid.Column="2"  materialDesign:HintAssist.Hint="Saisir l'email"/>
-        <TextBox Grid.Row="7" Grid.Column="2"  materialDesign:HintAssist.Hint="Saisir le téléphone"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Proxy.FirstName, Mode=TwoWay}"/>
+        <TextBox Grid.Row="3" Grid.Column="2"  Text="{Binding Proxy.LastName, Mode=TwoWay}"/>
+        <TextBox Grid.Row="4" Grid.Column="2"  Text="{Binding Proxy.City, Mode=TwoWay}"/>
+        <TextBox Grid.Row="5" Grid.Column="2"  Text="{Binding Proxy.Address, Mode=TwoWay}"/>
+        <TextBox Grid.Row="6" Grid.Column="2"  Text="{Binding Proxy.Email, Mode=TwoWay}"/>
+        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding Proxy.Phone, Mode=TwoWay}"/>
         <Button Grid.Row="8" Grid.Column="1" Content="Annuler" Width="120" Click="ButtonAnnuler_Click"></Button>
         <Button Grid.Row="8" Grid.Column="2" Content="Valider" Width="120" Click="ButtonValider_Click"></Button>
     </Grid>
