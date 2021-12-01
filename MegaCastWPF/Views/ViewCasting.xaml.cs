@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCastWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,9 @@ namespace MegaCastWPF.Views
     /// <summary>
     /// Logique d'interaction pour OffresCasting.xaml
     /// </summary>
-    public partial class OffresCasting : Page
+    public partial class ViewCasting : UserControl
     {
-        public OffresCasting()
+        public ViewCasting()
         {
             InitializeComponent();
         }

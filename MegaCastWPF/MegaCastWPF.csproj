@@ -75,19 +75,17 @@
     <Compile Include="Proxy\AddProxy.cs" />
     <Compile Include="ViewModel\ViewModelAddWindow.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
+    <Compile Include="ViewModel\ViewModelCasting.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
     <Compile Include="ViewModel\ViewModelViewMain.cs" />
     <Compile Include="Views\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewOffresCasting.xaml.cs">
-      <DependentUpon>ViewOffresCasting.xaml</DependentUpon>
+    <Compile Include="Views\ViewCasting.xaml.cs">
+      <DependentUpon>ViewCasting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewBroadcaster.xaml.cs">
       <DependentUpon>ViewBroadcaster.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ViewFormulaire.xaml.cs">
-      <DependentUpon>ViewFormulaire.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
@@ -108,15 +106,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ViewOffresCasting.xaml">
+    <Page Include="Views\ViewCasting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ViewBroadcaster.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ViewFormulaire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

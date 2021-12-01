@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWidows" Height="450" Width="800">
+        Title="MainWidows" Height="720" Width="1280">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200pt"/>
@@ -29,10 +29,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Content="MegaCasting" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" FontFamily="Italic" FontStretch="ExtraCondensed"/>
-            <Button Grid.Row="1" Name="BurttonBroadcasteur" Content="Diffuseurs" Style="{StaticResource ButtonStyle}" Click="ButtonBroadcasteur_Click"></Button>
+            <Button Grid.Row="1" Name="ButtonBroadcasteur" Content="Diffuseurs" Style="{StaticResource ButtonStyle}" Click="ButtonBroadcasteur_Click"></Button>
             <Button Grid.Row="2" Content="Artistes" Style="{StaticResource ButtonStyle}"></Button>
-            <Button Grid.Row="3" Name="Button" Content="Offres" Style="{StaticResource ButtonStyle}"></Button>
-            <Button Grid.Row="3" Content="Offres" Style="{StaticResource ButtonStyle}"></Button>
+            <Button Grid.Row="3" Name="ButtonCasting" Content="Offres" Style="{StaticResource ButtonStyle}" Click="ButtonCasting_Click"></Button>
             <Button Grid.Row="4" Content="Recruteurs" Style="{StaticResource ButtonStyle}"></Button>
 
             
