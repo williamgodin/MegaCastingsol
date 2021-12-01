@@ -26,13 +26,7 @@ namespace MegaCastWPF
         {
             InitializeComponent();
 
-            //List<string> civilities = new List<string>()
-            //{
-            //    "Monsieur",
-            //    "Madame",
-            //    "Truc",
-            //};
-            //this._ComboboxCivilities.ItemsSource = civilities;
+        
         }
         private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
         {
@@ -53,5 +47,15 @@ namespace MegaCastWPF
 
             this.DockPanel.Children.Add(view);
         }
+        private void ButtonCasting_Click(object sender, RoutedEventArgs e)
+        {
+            this.DockPanel.Children.Clear();
+            ViewModelCasting vm = new ViewModelCasting();
+            ViewCasting view = new ViewCasting();
+            view.DataContext = vm;
+
+            this.DockPanel.Children.Add(view);
+        }
+
     }
 }
