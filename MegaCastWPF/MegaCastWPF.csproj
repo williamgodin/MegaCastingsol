@@ -84,7 +84,7 @@
     <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelCasting.cs" />
-    <Compile Include="ViewModel\ViewModelRecruiter.cs" />
+    <Compile Include="ViewModel\ViewModelProfessional.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
     <Compile Include="ViewModel\ViewModelViewMain.cs" />
     <Compile Include="Views\AddViews\AddWindowBroadcaster.xaml.cs">
@@ -105,11 +105,17 @@
     <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewProfessional.xaml.cs">
+      <DependentUpon>ViewProfessional.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Artiste\AddArtistWindow.xaml.cs">
       <DependentUpon>AddArtistWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ModifViews\ViewModifCasting.xaml.cs">
       <DependentUpon>ViewModifCasting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Professional\addProfessionalWindow.xaml.cs">
+      <DependentUpon>addProfessionalWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -151,7 +157,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ViewProfessional.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Artiste\AddArtistWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Professional\addProfessionalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

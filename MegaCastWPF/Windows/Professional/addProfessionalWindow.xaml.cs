@@ -11,25 +11,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MegaCastWPF.ViewModel;
-using Megacasting.DBLib;
-using MegaCastWPF.Proxy;
+using MegaCastWPF.Windows.Professional;
 
-
-
-namespace MegaCastWPF.Windows.Artiste
+namespace MegaCastWPF.Windows.Professional
 {
     /// <summary>
-    /// Logique d'interaction pour AddArtistWindow.xaml
+    /// Logique d'interaction pour addProfessionalWindow.xaml
     /// </summary>
-    public partial class AddArtistWindow : Window
+    public partial class addProfessionalWindow : Window
     {
-        
-        public AddArtistWindow()
+        public addProfessionalWindow()
         {
             InitializeComponent();
-            Megacasting.DBLib.Artiste artiste = new Megacasting.DBLib.Artiste();
-            this.DataContext = artiste;
+            Megacasting.DBLib.Professionnel professionnel = new Megacasting.DBLib.Professionnel();
+            this.DataContext = professionnel;
         }
 
         private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
@@ -41,6 +36,5 @@ namespace MegaCastWPF.Windows.Artiste
         {
             this.DialogResult = true;
         }
-
     }
 }
