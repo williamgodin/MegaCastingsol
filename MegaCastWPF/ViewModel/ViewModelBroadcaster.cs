@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Megacasting.DBLib;
+using MegaCastWPF.Core;
 using MegaCastWPF.Views;
 
 namespace MegaCastWPF.ViewModel
@@ -26,7 +27,7 @@ namespace MegaCastWPF.ViewModel
         /// <summary>
         /// Liste des broadcaster
         /// </summary>
-        public ObservableCollection<Personne> _Items;
+        public ObservableCollection<Personne> _Personne;
 
         private List<Civilité> _civilite;
 
@@ -39,10 +40,10 @@ namespace MegaCastWPF.ViewModel
             get { return _SelectedItem; }
             set { _SelectedItem = value; }
         }
-        public ObservableCollection<Personne> Items
+        public ObservableCollection<Personne> Personne
         {
-            get { return _Items; }
-            set { _Items = value; }
+            get { return _Personne; }
+            set { _Personne = value; }
         }
         public List<Civilité> civilite
         {
@@ -50,11 +51,18 @@ namespace MegaCastWPF.ViewModel
             set { _civilite = value; }
         }
         #endregion
+        #region Commands
+        public RelayCommand CommandAddItem => new RelayCommand(
+            actionParameter => this.AddItem(),
+            ationPossibilityParameter => true);
+
+       
+        #endregion
         #region Builder
         public ViewModelBroadcaster() : base()
         {
             this.Entities.Personne.ToList();
-            this.Items = this.Entities.Personne.Local;
+            this.Personne = this.Entities.Personne.Local;
         }
         #endregion
         #region Method
@@ -62,7 +70,7 @@ namespace MegaCastWPF.ViewModel
         public void AddItem()
         {
             this.Entities.Civilité.ToList();
-            ViewModelAddWindow vm = new ViewModelAddWindow(this.Entities.Civilité.Local);
+            ViewModelAddWindowBroadcaster vm = new ViewModelAddWindowBroadcaster(this.Entities.Civilité.Local);
             AddWindow addwindow = new AddWindow();
             addwindow.DataContext = vm;
             addwindow.ShowDialog();
