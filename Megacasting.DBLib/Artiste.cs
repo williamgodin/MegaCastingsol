@@ -14,14 +14,5 @@ namespace Megacasting.DBLib
     
     public partial class Artiste : Personne
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Artiste()
-        {
-            this.Casting = new HashSet<Casting>();
-        }
-    
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Casting> Casting { get; set; }
     }
 }

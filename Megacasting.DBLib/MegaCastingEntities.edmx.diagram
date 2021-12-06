@@ -6,19 +6,14 @@
     <edmx:Diagrams>
       <Diagram DiagramId="8d441379382d42a8915eb21ae9d6df87" Name="Diagram1">
         <EntityTypeShape EntityType="MegacastingModel.Artiste" Width="1.5" PointX="4.375" PointY="7.75" />
-        <EntityTypeShape EntityType="MegacastingModel.Casting" Width="1.5" PointX="7.5" PointY="3.75" />
         <EntityTypeShape EntityType="MegacastingModel.Civilité" Width="1.5" PointX="0.5" PointY="5" />
         <EntityTypeShape EntityType="MegacastingModel.Domaine_de_métier" Width="1.5" PointX="3" PointY="1.125" />
         <EntityTypeShape EntityType="MegacastingModel.Métier" Width="1.5" PointX="5.25" PointY="0.75" />
         <EntityTypeShape EntityType="MegacastingModel.Personne" Width="1.5" PointX="2.375" PointY="3.375" />
         <EntityTypeShape EntityType="MegacastingModel.Professionnel" Width="1.5" PointX="5.25" PointY="4" />
         <EntityTypeShape EntityType="MegacastingModel.Type_de_contrat" Width="1.5" PointX="10.5" PointY="6.625" />
-        <AssociationConnector Association="MegacastingModel.FK__Casting__Id_Cont__36B12243" />
-        <AssociationConnector Association="MegacastingModel.FK__Casting__Id_Meti__37A5467C" />
-        <AssociationConnector Association="MegacastingModel.FK__Casting__Id_Prof__5535A963" />
         <AssociationConnector Association="MegacastingModel.FK__Personne__Id_Civ__2D27B809" />
         <AssociationConnector Association="MegacastingModel.FK__Métier__Id_Domai__2A4B4B5E" />
-        <AssociationConnector Association="MegacastingModel.Participer" />
         <InheritanceConnector EntityType="MegacastingModel.Professionnel" />
         <InheritanceConnector EntityType="MegacastingModel.Artiste" ManuallyRouted="true" >
           <ConnectorPoint PointX="3.125" PointY="6.1244921875" />
@@ -26,6 +21,10 @@
           <ConnectorPoint PointX="5.125" PointY="7.375" />
           <ConnectorPoint PointX="5.125" PointY="7.75" />
         </InheritanceConnector>
+        <EntityTypeShape EntityType="MegacastingModel.Casting" Width="1.5" PointX="12.75" PointY="2.5" />
+        <AssociationConnector Association="MegacastingModel.FK__Casting__Id_Cont__36B12243" />
+        <AssociationConnector Association="MegacastingModel.FK__Casting__Id_Meti__37A5467C" />
+        <AssociationConnector Association="MegacastingModel.FK__Casting__Id_Prof__5535A963" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

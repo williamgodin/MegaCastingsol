@@ -9,6 +9,13 @@ namespace MegaCastWPF.Proxy
 {
     public class AddCastingProxy
     {
+        private Casting _SelectedCasting;
+
+        public Casting SelectedCasting
+        {
+            get { return _SelectedCasting; }
+            set { _SelectedCasting = value; }
+        }
 
         public Casting Casting { get; set; }
 
@@ -24,6 +31,9 @@ namespace MegaCastWPF.Proxy
         public string Localisation { get; set; }
         public int Nbr_poste { get; set; }
         public int Reference { get; set; }
-
+        public AddCastingProxy()
+        {
+            this.Date_debut_publication = DateTime.UtcNow;
+        }
     }
 }

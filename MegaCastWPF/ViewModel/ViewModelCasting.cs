@@ -30,7 +30,7 @@ namespace MegaCastWPF.ViewModel
             ationPossibilityParameter => true);
 
         public RelayCommand CommandModifItem => new RelayCommand(
-            actionParameter => this.AddItem(),
+            actionParameter => this.ModifItem(),
             ationPossibilityParameter => true);
         public RelayCommand CommandDelItem => new RelayCommand(
             actionParameter => this.DelItem(),
@@ -47,7 +47,7 @@ namespace MegaCastWPF.ViewModel
             get { return _Casting; }
             set { _Casting = value; }
         }
-        
+
         #endregion
         #region Builder
         public ViewModelCasting() : base()
@@ -101,7 +101,14 @@ namespace MegaCastWPF.ViewModel
             }
 
         }
-
+        public void ModifItem()
+        {
+            ViewModelAddWindowCasting vm = new ViewModelAddWindowCasting(this.Entities.Personne.ToList(), this.Entities.Type_de_contrat.ToList(), this.Entities.Métier.ToList());
+            AddWindowCasting addwindow = new AddWindowCasting();
+            addwindow.DataContext = vm;
+            vm.Proxy.SelectedCasting = this.SelectedItem;
+            addwindow.ShowDialog();
+        }
         #endregion
     }
 }

@@ -14,12 +14,6 @@ namespace Megacasting.DBLib
     
     public partial class Casting
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Casting()
-        {
-            this.Artiste = new HashSet<Artiste>();
-        }
-    
         public int Id_Casting { get; set; }
         public string Intitule { get; set; }
         public int Reference { get; set; }
@@ -37,7 +31,5 @@ namespace Megacasting.DBLib
         public virtual Type_de_contrat Type_de_contrat { get; set; }
         public virtual Métier Métier { get; set; }
         public virtual Professionnel Professionnel { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Artiste> Artiste { get; set; }
     }
 }

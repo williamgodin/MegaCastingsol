@@ -24,8 +24,8 @@ namespace Megacasting.DBLib
         public string Libelle { get; set; }
         public int Id_Domaine_metier { get; set; }
     
+        public virtual Domaine_de_métier Domaine_de_métier { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Casting> Casting { get; set; }
-        public virtual Domaine_de_métier Domaine_de_métier { get; set; }
     }
 }
