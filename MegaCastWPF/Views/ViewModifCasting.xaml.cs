@@ -1,5 +1,4 @@
-﻿using MegaCastWPF.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,27 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MegaCastWPF.Views
 {
     /// <summary>
-    /// Logique d'interaction pour OffresCasting.xaml
+    /// Logique d'interaction pour ViewMofifCasting.xaml
     /// </summary>
-    public partial class ViewCasting : UserControl
+    public partial class ViewModifCasting : Window
     {
-        public ViewCasting()
+        public ViewModifCasting()
         {
             InitializeComponent();
         }
-        
-        private void DelButton_Click(object sender, RoutedEventArgs e)
-        {
-            ((ViewModelCasting)this.DataContext).DelItem();
-        }
-
-        
 
         
     }

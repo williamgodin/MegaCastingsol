@@ -25,11 +25,11 @@ namespace Megacasting.DBLib
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Casting> Casting { get; set; }
         public virtual DbSet<Civilité> Civilité { get; set; }
         public virtual DbSet<Domaine_de_métier> Domaine_de_métier { get; set; }
         public virtual DbSet<Métier> Métier { get; set; }
         public virtual DbSet<Personne> Personne { get; set; }
         public virtual DbSet<Type_de_contrat> Type_de_contrat { get; set; }
+        public virtual DbSet<Casting> Casting { get; set; }
     }
 }

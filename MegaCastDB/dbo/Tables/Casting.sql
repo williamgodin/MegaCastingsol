@@ -2,7 +2,7 @@
     [Id_Casting]             INT           IDENTITY (1, 1) NOT NULL,
     [Intitule]               VARCHAR (50)  NOT NULL,
     [Reference]              INT           NOT NULL,
-    [Date_debut_publication] DATETIME      NOT NULL,
+    [Date_debut_publication] DATETIME2      NOT NULL,
     [Nbr_poste]              INT           NOT NULL,
     [Localisation]           VARCHAR (50)  NOT NULL,
     [Description_poste]      VARCHAR (250) NOT NULL,
