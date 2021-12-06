@@ -64,5 +64,15 @@ namespace MegaCastWPF
             this.DockPanel.Children.Add(view);
 
         }
+
+        private void ButtonProfessional_Click(object sender, RoutedEventArgs e)
+        {
+            this.DockPanel.Children.Clear();
+            ViewModelProfessional vm = new ViewModelProfessional();
+            ViewProfessional view = new ViewProfessional();
+            view.DataContext = vm;
+
+            this.DockPanel.Children.Add(view);
+        }
     }
 }

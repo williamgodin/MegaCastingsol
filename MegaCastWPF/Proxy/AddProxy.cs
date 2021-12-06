@@ -11,6 +11,7 @@ namespace MegaCastWPF.Proxy
     {
         #region Fields
         public Civilité Civilite { get; set; }
+
         public string Firstname { get; set; }
 
         public string Lastname { get; set; }

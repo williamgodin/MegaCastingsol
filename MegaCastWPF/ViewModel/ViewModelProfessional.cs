@@ -1,38 +1,26 @@
-﻿using System;
+﻿using Megacasting.DBLib;
+using MegaCastWPF.Windows.Professional;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Megacasting.DBLib;
-using MegaCastWPF.Views;
-using MegaCastWPF.Windows.Artiste;
 
 namespace MegaCastWPF.ViewModel
 {
-
-    /// <summary>
-    /// Modèle-vue pour la vue d'un diffuseur
-    /// </summary>
-    class ViewModelArtist : ViewModelViewBase
+    class ViewModelProfessional : ViewModelViewBase
     {
-
         #region Fields
         /// <summary>
-        /// Broadcater
+        /// Professesional
         /// </summary>
         private Personne _SelectedItem;
 
         /// <summary>
-        /// Liste des broadcaster
+        /// Liste des professionels
         /// </summary>
         public ObservableCollection<Personne> _Items;
-
-        private List<Civilité> _civilite;
-
-
-
         #endregion
         #region Properties
         public Personne SelectedItem
@@ -45,43 +33,38 @@ namespace MegaCastWPF.ViewModel
             get { return _Items; }
             set { _Items = value; }
         }
-        public List<Civilité> civilite
-        {
-            get { return _civilite; }
-            set { _civilite = value; }
-        }
         #endregion
         #region Builder
-        public ViewModelArtist() : base()
+        public ViewModelProfessional() : base()
         {
             this.Entities.Personne.ToList();
             this.Items = this.Entities.Personne.Local;
         }
         #endregion
         #region Method
-
         public void AddItem()
         {
             this.Entities.Civilité.ToList();
             ViewModelAddWindow vm = new ViewModelAddWindow(this.Entities.Civilité.Local);
-            AddArtistWindow addArtistWindow = new AddArtistWindow();
-            addArtistWindow.DataContext = vm;
-            addArtistWindow.ShowDialog();
+            addProfessionalWindow addProfessionalWindow = new addProfessionalWindow();
+            addProfessionalWindow.DataContext = vm;
+            addProfessionalWindow.ShowDialog();
 
-            if (addArtistWindow.DialogResult.GetValueOrDefault())
+
+            if (addProfessionalWindow.DialogResult.GetValueOrDefault())
             {
 
-                 Artiste artiste = new Artiste();
-                artiste.Civilité = vm.Proxy.Civilite;
-                artiste.Id_Civilite = vm.Proxy.Civilite.Id_Civilite;
-                artiste.Nom = vm.Proxy.Lastname;
-                artiste.Prenom = vm.Proxy.Firstname;
-                artiste.Ville = vm.Proxy.City;
-                artiste.Adresse = vm.Proxy.Address;
-                artiste.Email = vm.Proxy.Email;
-                artiste.Telephone = vm.Proxy.Phone;
-                this.SelectedItem = artiste;
-                this.Entities.Personne.Add(artiste);
+                Professionnel professionnel = new Professionnel();
+                professionnel.Civilité = vm.Proxy.Civilite;
+                professionnel.Id_Civilite = vm.Proxy.Civilite.Id_Civilite;
+                professionnel.Nom = vm.Proxy.Lastname;
+                professionnel.Prenom = vm.Proxy.Firstname;
+                professionnel.Ville = vm.Proxy.City;
+                professionnel.Adresse = vm.Proxy.Address;
+                professionnel.Email = vm.Proxy.Email;
+                professionnel.Telephone = vm.Proxy.Phone;
+                this.SelectedItem = professionnel;
+                this.Entities.Personne.Add(professionnel);
                 this.Entities.SaveChanges();
             }
         }
@@ -101,6 +84,3 @@ namespace MegaCastWPF.ViewModel
         #endregion
     }
 }
-
-
-

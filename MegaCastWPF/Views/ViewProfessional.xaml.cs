@@ -13,24 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MegaCastWPF.Windows.Artiste;
-using Megacasting.DBLib;
 
 namespace MegaCastWPF.Views
 {
     /// <summary>
-    /// Logique d'interaction pour ViewArtist.xaml
+    /// Logique d'interaction pour ViewProfessional.xaml
     /// </summary>
-    public partial class ViewArtist : UserControl
+    public partial class ViewProfessional : UserControl
     {
-        public ViewArtist()
+        public ViewProfessional()
         {
             InitializeComponent();
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelArtist)this.DataContext).AddItem();
+            ((ViewModelProfessional)this.DataContext).AddItem();
         }
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
@@ -40,8 +38,7 @@ namespace MegaCastWPF.Views
 
         private void ButtonDel_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelArtist)this.DataContext).DelItem();
+            ((ViewModelProfessional)this.DataContext).DelItem();
         }
-
     }
 }
