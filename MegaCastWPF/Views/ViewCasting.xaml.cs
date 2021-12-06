@@ -25,5 +25,20 @@ namespace MegaCastWPF.Views
         {
             InitializeComponent();
         }
+        
+        private void DelButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelCasting)this.DataContext).DelItem();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ModifButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

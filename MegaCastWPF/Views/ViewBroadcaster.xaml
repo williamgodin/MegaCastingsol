@@ -19,10 +19,10 @@
         </Grid.RowDefinitions>
 
 
-        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" ItemsSource="{Binding Items}" DisplayMemberPath="Nom" SelectedItem="{Binding SelectedItem}"  />
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" ItemsSource="{Binding Personne}" DisplayMemberPath="Nom" SelectedItem="{Binding SelectedItem}"  />
 
 
-        <Button Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Content="Ajouter" Name="ButtonAdd" Click="AddButton_Click"/>
+        <Button Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Content="Ajouter" Name="ButtonAdd" Command="{Binding CommandAddItem}" />
         <GroupBox Header="{Binding SelectedItem}" Grid.Row="0" Grid.Column="1" Visibility="{Binding SelectedItem, Converter={StaticResource _ShareObjectToVisibilityConverter}}" Margin="0,0,0,106" Grid.RowSpan="3">
             <GroupBox.HeaderTemplate>
                 <DataTemplate>
@@ -45,6 +45,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MegaCastWPF.Proxy
 {
-    public class AddProxy
+    public class AddBroadcasterProxy
     {
         public Civilité Civilite { get; set; }
         public string Firstname { get; set; }
@@ -16,6 +16,7 @@ namespace MegaCastWPF.Proxy
         public string City { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+
 
     }
 }

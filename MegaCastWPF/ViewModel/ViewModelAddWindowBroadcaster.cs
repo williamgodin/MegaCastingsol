@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MegaCastWPF.ViewModel
 {
-    class ViewModelAddWindow
+    class ViewModelAddWindowBroadcaster
     {
         #region Fields
         /// <summary>
@@ -22,7 +22,7 @@ namespace MegaCastWPF.ViewModel
 
         
 
-        private AddProxy _Proxy;
+        private AddBroadcasterProxy _Proxy;
 
         
 
@@ -45,7 +45,7 @@ namespace MegaCastWPF.ViewModel
             get { return _Items; }
             set { _Items = value; }
         }
-        public AddProxy Proxy
+        public AddBroadcasterProxy Proxy
         {
             get { return _Proxy; }
             set { _Proxy = value; }
@@ -63,9 +63,9 @@ namespace MegaCastWPF.ViewModel
         #endregion
 
         #region Constructor
-        public ViewModelAddWindow(ObservableCollection<Civilité> civilites)
+        public ViewModelAddWindowBroadcaster(ObservableCollection<Civilité> civilites)
         {
-            this.Proxy = new AddProxy();
+            this.Proxy = new AddBroadcasterProxy();
             this.Civilites = civilites;
         }
 

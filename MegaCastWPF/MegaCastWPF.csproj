@@ -72,14 +72,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
-    <Compile Include="Proxy\AddProxy.cs" />
-    <Compile Include="ViewModel\ViewModelAddWindow.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Proxy\AddCastingProxy.cs" />
+    <Compile Include="Proxy\AddBroadcasterProxy.cs" />
+    <Compile Include="ViewModel\ViewModelAddWindowBroadcaster.cs" />
+    <Compile Include="ViewModel\ViewModelAddWindowCasting.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelCasting.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
     <Compile Include="ViewModel\ViewModelViewMain.cs" />
-    <Compile Include="Views\AddWindow.xaml.cs">
-      <DependentUpon>AddWindow.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddWindowBroadcaster.xaml.cs">
+      <DependentUpon>AddWindowBroadcaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddViews\AddWindowCasting.xaml.cs">
+      <DependentUpon>AddWindowCasting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewCasting.xaml.cs">
       <DependentUpon>ViewCasting.xaml</DependentUpon>
@@ -102,7 +108,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AddWindow.xaml">
+    <Page Include="Views\AddViews\AddWindowBroadcaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddViews\AddWindowCasting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
