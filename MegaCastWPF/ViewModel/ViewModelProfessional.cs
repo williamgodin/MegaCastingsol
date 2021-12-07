@@ -45,7 +45,7 @@ namespace MegaCastWPF.ViewModel
         public void AddItem()
         {
             this.Entities.Civilité.ToList();
-            ViewModelAddWindow vm = new ViewModelAddWindow(this.Entities.Civilité.Local);
+            ViewModelAddWindowBroadcaster vm = new ViewModelAddWindowBroadcaster(this.Entities.Civilité.Local);
             addProfessionalWindow addProfessionalWindow = new addProfessionalWindow();
             addProfessionalWindow.DataContext = vm;
             addProfessionalWindow.ShowDialog();

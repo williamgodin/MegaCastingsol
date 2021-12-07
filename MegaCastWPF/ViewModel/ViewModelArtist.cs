@@ -63,7 +63,7 @@ namespace MegaCastWPF.ViewModel
         public void AddItem()
         {
             this.Entities.Civilité.ToList();
-            ViewModelAddWindow vm = new ViewModelAddWindow(this.Entities.Civilité.Local);
+            ViewModelAddWindowBroadcaster vm = new ViewModelAddWindowBroadcaster(this.Entities.Civilité.Local);
             AddArtistWindow addArtistWindow = new AddArtistWindow();
             addArtistWindow.DataContext = vm;
             addArtistWindow.ShowDialog();
@@ -71,7 +71,7 @@ namespace MegaCastWPF.ViewModel
             if (addArtistWindow.DialogResult.GetValueOrDefault())
             {
 
-                 Artiste artiste = new Artiste();
+                Artiste artiste = new Artiste();
                 artiste.Civilité = vm.Proxy.Civilite;
                 artiste.Id_Civilite = vm.Proxy.Civilite.Id_Civilite;
                 artiste.Nom = vm.Proxy.Lastname;
@@ -101,6 +101,3 @@ namespace MegaCastWPF.ViewModel
         #endregion
     }
 }
-
-
-

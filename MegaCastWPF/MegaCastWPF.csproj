@@ -76,17 +76,14 @@
     </Compile>
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Proxy\PersonProxy.cs" />
     <Compile Include="Proxy\AddCastingProxy.cs" />
     <Compile Include="Proxy\AddBroadcasterProxy.cs" />
     <Compile Include="Proxy\ModifCastingProxy.cs" />
     <Compile Include="ViewModel\ViewModelAddWindowBroadcaster.cs" />
+    <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelModifWindowCasting.cs" />
     <Compile Include="ViewModel\ViewModelAddWindowCasting.cs" />
-    <Compile Include="Proxy\PersonProxy.cs" />
-    <Compile Include="ViewModel\ViewModelAddWindow.cs" />
-    <Compile Include="ViewModel\ViewModelArtist.cs" />
-    <Compile Include="ViewModel\ViewModelAddWindow.cs" />
-    <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelCasting.cs" />
     <Compile Include="ViewModel\ViewModelProfessional.cs" />
@@ -100,9 +97,6 @@
     </Compile>
     <Compile Include="Views\ViewCasting.xaml.cs">
       <DependentUpon>ViewCasting.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ViewArtist.xaml.cs">
-      <DependentUpon>ViewArtist.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewArtist.xaml.cs">
       <DependentUpon>ViewArtist.xaml</DependentUpon>
@@ -157,10 +151,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ViewArtist.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\ViewBroadcaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,18 +175,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ViewProfessional.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Artiste\AddArtistWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Professional\addProfessionalWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
