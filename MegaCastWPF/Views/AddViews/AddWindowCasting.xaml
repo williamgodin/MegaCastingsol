@@ -68,7 +68,7 @@
                 IsDefault="True"
                 Foreground="White" 
                 Name="ButtonSave" 
-                Click="SaveButtonAddWindow_Click"/>
+                Click="SaveButtonAddCastingWindow_Click"/>
         <Button Grid.Row="13" Grid.Column="3" 
                 IsCancel="True"
                 Content="Annuler" 

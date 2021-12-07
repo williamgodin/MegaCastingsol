@@ -103,8 +103,8 @@ namespace MegaCastWPF.ViewModel
         }
         public void ModifItem()
         {
-            ViewModelAddWindowCasting vm = new ViewModelAddWindowCasting(this.Entities.Personne.ToList(), this.Entities.Type_de_contrat.ToList(), this.Entities.Métier.ToList());
-            AddWindowCasting addwindow = new AddWindowCasting();
+            ViewModelModifWindowCasting vm = new ViewModelModifWindowCasting(this.Entities.Personne.ToList(), this.Entities.Type_de_contrat.ToList(), this.Entities.Métier.ToList());
+            ViewModifCasting addwindow = new ViewModifCasting();
             addwindow.DataContext = vm;
             vm.Proxy.SelectedCasting = this.SelectedItem;
             addwindow.ShowDialog();
