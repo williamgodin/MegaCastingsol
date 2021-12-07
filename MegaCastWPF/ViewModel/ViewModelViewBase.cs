@@ -12,8 +12,14 @@ namespace MegaCastWPF.ViewModel
     /// </summary>
     class ViewModelViewBase
     {
+        /// <summary>
+        /// Fait le lien avec la base de donnée
+        /// </summary>
+        public ViewModelViewBase()
+        {
+            this.Entities = new MegacastingEntities();
+        }
         #region Field
-
         private MegacastingEntities _Entities;
 
         #endregion
@@ -23,10 +29,6 @@ namespace MegaCastWPF.ViewModel
             get { return _Entities; }
             set { _Entities = value; }
         }
-        #endregion
-        public ViewModelViewBase()
-        {
-            this.Entities = new MegacastingEntities();
-        }
     }
+    #endregion
 }

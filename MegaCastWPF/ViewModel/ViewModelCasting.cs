@@ -15,16 +15,35 @@ namespace MegaCastWPF.ViewModel
 
         #region Fields
         /// <summary>
-        /// Broadcater
+        /// Unique
         /// </summary>
         private Casting _SelectedItem;
-
         /// <summary>
-        /// Liste des broadcaster
+        /// Liste
         /// </summary>
         public ObservableCollection<Casting> _Casting;
 
+        #endregion
+        #region Properties
+        /// <summary>
+        /// Unique
+        /// </summary>
+        public Casting SelectedItem
+        {
+            get { return _SelectedItem; }
+            set { _SelectedItem = value; }
+        }
+        /// <summary>
+        /// Liste
+        /// </summary>
+        public ObservableCollection<Casting> Casting
+        {
+            get { return _Casting; }
+            set { _Casting = value; }
+        }
 
+        #endregion
+        #region Commands
         public RelayCommand CommandAddItem => new RelayCommand(
             actionParameter => this.AddItem(),
             ationPossibilityParameter => true);
@@ -36,20 +55,10 @@ namespace MegaCastWPF.ViewModel
             actionParameter => this.DelItem(),
             ationPossibilityParameter => true);
         #endregion
-        #region Properties
-        public Casting SelectedItem
-        {
-            get { return _SelectedItem; }
-            set { _SelectedItem = value; }
-        }
-        public ObservableCollection<Casting> Casting
-        {
-            get { return _Casting; }
-            set { _Casting = value; }
-        }
-
-        #endregion
         #region Builder
+        /// <summary>
+        /// Initialise la page des casting les listant tous
+        /// </summary>
         public ViewModelCasting() : base()
         {
             this.Entities.Casting.ToList();
@@ -57,7 +66,9 @@ namespace MegaCastWPF.ViewModel
         }
         #endregion
         #region Method
-
+        /// <summary>
+        /// Lors du clique sur le boutton "AJOUTER", lancement de la fenêtre et affectation valeur avec le proxy
+        /// </summary>
         public void AddItem()
         {
             this.Entities.Casting.ToList();
@@ -88,10 +99,16 @@ namespace MegaCastWPF.ViewModel
 
             }
         }
+        /// <summary>
+        /// Sauvegarder les données en BDD
+        /// </summary>
         public void SaveItem()
         {
             this.Entities.SaveChanges();
         }
+        /// <summary>
+        /// Suppression des données en BDD du Casting selectionné
+        /// </summary>
         public void DelItem()
         {
             if (SelectedItem != null)
@@ -101,6 +118,9 @@ namespace MegaCastWPF.ViewModel
             }
 
         }
+        /// <summary>
+        /// Lors du clique sur le boutton "MODIFIER", lancement de la fenêtre et affectation valeur avec le proxy
+        /// </summary>
         public void ModifItem()
         {
             ViewModelModifWindowCasting vm = new ViewModelModifWindowCasting(this.Entities.Personne.ToList(), this.Entities.Type_de_contrat.ToList(), this.Entities.Métier.ToList());

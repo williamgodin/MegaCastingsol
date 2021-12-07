@@ -8,6 +8,9 @@ using System.Windows.Data;
 
 namespace MegaCastWPF.Converters
 {
+    /// <summary>
+    /// Vérifie si un objet est nul. Si l'objet est nul, le IValueConverter renvoie Collapsed.
+    /// </summary>
     public class ObjectToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -30,6 +33,9 @@ namespace MegaCastWPF.Converters
             throw new NotImplementedException();
         }
     }
+    /// <summary>
+    /// Convertit un booléen en Visibility. Si la valeur est vraie, le IValueConverter renverra soit Collapsed soit Visibility en fonction du paramètre
+    /// </summary>
     class BoolToVisibilityConverter : IValueConverter, IMultiValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -71,5 +77,5 @@ namespace MegaCastWPF.Converters
         }
 
     }
-    
+
 }

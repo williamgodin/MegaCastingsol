@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace MegaCastWPF.Views
 {
     /// <summary>
-    /// Logique d'interaction pour AddWindow.xaml
+    /// Logique d'interaction pour AddWindowBroadcaster.xaml
     /// </summary>
     public partial class AddWindow : Window
     {

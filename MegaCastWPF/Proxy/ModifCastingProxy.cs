@@ -9,16 +9,13 @@ namespace MegaCastWPF.Proxy
 {
     class ModifCastingProxy
     {
-        private Casting _SelectedCasting;
-
         public Casting SelectedCasting
         {
             get { return _SelectedCasting; }
             set { _SelectedCasting = value; }
         }
-
+        private Casting _SelectedCasting;
         public Casting Casting { get; set; }
-
         public String Intitule { get; set; }
         public DateTime Date_debut_publication { get; set; }
         public Professionnel Professionnel { get; set; }
@@ -32,5 +29,5 @@ namespace MegaCastWPF.Proxy
         public int Nbr_poste { get; set; }
         public int Reference { get; set; }
     }
-    
+
 }
