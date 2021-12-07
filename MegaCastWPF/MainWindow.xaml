@@ -25,14 +25,18 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Content="MegaCasting" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" FontFamily="Italic" FontStretch="ExtraCondensed"/>
-            <Button Grid.Row="1" Name="ButtonBroadcasteur" Content="Diffuseurs" Style="{StaticResource ButtonStyle}" Click="ButtonBroadcasteur_Click"></Button>
-            <Button Grid.Row="2" Content="Artistes" Style="{StaticResource ButtonStyle}"></Button>
-            <Button Grid.Row="3" Name="ButtonCasting" Content="Casting" Style="{StaticResource ButtonStyle}" Click="ButtonCasting_Click"></Button>
-            <Button Grid.Row="4" Content="Recruteurs" Style="{StaticResource ButtonStyle}"></Button>
+            <Button Grid.Row="1" Name="BurttonBroadcasteur" Content="Diffuseurs" Style="{StaticResource ButtonStyle}" Click="ButtonBroadcasteur_Click"></Button>
+            <Button Grid.Row="2" Content="Artistes" Style="{StaticResource ButtonStyle}" Click="ButtonArtist_Click"></Button>
+            <Button Grid.Row="3" Content="Offres" Style="{StaticResource ButtonStyle}" Click="ButtonCasting_Click"></Button>
+            <Button Grid.Row="4" Content="Professionels" Style="{StaticResource ButtonStyle}" Click="ButtonProfessional_Click"></Button>
+            <Button Grid.Row="8" Grid.Column="0" Content=" Se déconnecter" Style="{StaticResource ButtonStyle}" ></Button>
 
             
             

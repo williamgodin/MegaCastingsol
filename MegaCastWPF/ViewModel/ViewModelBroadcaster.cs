@@ -18,7 +18,7 @@ namespace MegaCastWPF.ViewModel
         /// <summary>
         /// Broadcater
         /// </summary>
-        private Personne _SelectedItem;
+        private Personne _SelectedItem; 
 
         /// <summary>
         /// Listes
@@ -125,7 +125,6 @@ namespace MegaCastWPF.ViewModel
                 this.Entities.Personne.Remove(SelectedItem);
                 this.Entities.SaveChanges();
             }
-
         }
 
         #endregion

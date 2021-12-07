@@ -71,16 +71,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConnectionWindow.xaml.cs">
+      <DependentUpon>ConnectionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Proxy\PersonProxy.cs" />
     <Compile Include="Proxy\AddCastingProxy.cs" />
     <Compile Include="Proxy\AddBroadcasterProxy.cs" />
     <Compile Include="Proxy\ModifCastingProxy.cs" />
     <Compile Include="ViewModel\ViewModelAddWindowBroadcaster.cs" />
+    <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelModifWindowCasting.cs" />
     <Compile Include="ViewModel\ViewModelAddWindowCasting.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelCasting.cs" />
+    <Compile Include="ViewModel\ViewModelProfessional.cs" />
     <Compile Include="ViewModel\ViewModelViewBase.cs" />
     <Compile Include="ViewModel\ViewModelViewMain.cs" />
     <Compile Include="Views\AddViews\AddWindowBroadcaster.xaml.cs">
@@ -92,15 +98,31 @@
     <Compile Include="Views\ViewCasting.xaml.cs">
       <DependentUpon>ViewCasting.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewArtist.xaml.cs">
+      <DependentUpon>ViewArtist.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewBroadcaster.xaml.cs">
       <DependentUpon>ViewBroadcaster.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewProfessional.xaml.cs">
+      <DependentUpon>ViewProfessional.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Artiste\AddArtistWindow.xaml.cs">
+      <DependentUpon>AddArtistWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModifViews\ViewModifCasting.xaml.cs">
       <DependentUpon>ViewModifCasting.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Professional\addProfessionalWindow.xaml.cs">
+      <DependentUpon>addProfessionalWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ConnectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ViewArtist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewBroadcaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +163,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ViewProfessional.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Artiste\AddArtistWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Professional\addProfessionalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
