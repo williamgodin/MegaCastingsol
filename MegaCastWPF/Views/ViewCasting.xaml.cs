@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCastWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,23 +17,22 @@ using System.Windows.Shapes;
 namespace MegaCastWPF.Views
 {
     /// <summary>
-    /// Logique d'interaction pour ViewFormulaire.xaml
+    /// Logique d'interaction pour OffresCasting.xaml
     /// </summary>
-    public partial class ViewFormulaire : UserControl
+    public partial class ViewCasting : UserControl
     {
-        public ViewFormulaire()
+        public ViewCasting()
         {
             InitializeComponent();
         }
-
-        private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
+        
+        private void DelButton_Click(object sender, RoutedEventArgs e)
         {
-            ((Window)this.Parent).Close();
+            ((ViewModelCasting)this.DataContext).DelItem();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        
 
-        }
+        
     }
 }

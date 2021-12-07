@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MegaCastWPF.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="720" d:DesignWidth="1080">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100pt"/>
@@ -19,14 +19,14 @@
         </Grid.RowDefinitions>
 
 
-        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" ItemsSource="{Binding Items}" DisplayMemberPath="Nom" SelectedItem="{Binding SelectedItem}">
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" ItemsSource="{Binding Personne}" DisplayMemberPath="Nom" SelectedItem="{Binding SelectedItem}"  />
 
-        </ListBox>
-        <Button Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Content="Ajouter" Name="ButtonAdd" Click="AddButton_Click"/>
+
+        <Button Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Content="Ajouter" Name="ButtonAdd" Command="{Binding CommandAddItem}" />
         <GroupBox Header="{Binding SelectedItem}" Grid.Row="0" Grid.Column="1" Visibility="{Binding SelectedItem, Converter={StaticResource _ShareObjectToVisibilityConverter}}" Margin="0,0,0,106" Grid.RowSpan="3">
             <GroupBox.HeaderTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
@@ -45,6 +45,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
