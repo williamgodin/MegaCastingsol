@@ -12,8 +12,11 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Bienvenue dans MegaCasting" />
-        <Label Grid.Row="1" Content="Artiste (10 derniers)" />
-        <Label Grid.Row="3" Content="Offres (10 dernières)" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="4" Grid.Column="1" Content="Bienvenue dans MegaCasting" FontSize="40" FontWeight="Bold"/>
     </Grid>
 </UserControl>

@@ -24,7 +24,7 @@ namespace MegaCastWPF.Views
             InitializeComponent();
         }
 
-        private void SaveButtonAddWindow_Click(object sender, RoutedEventArgs e)
+        private void SaveButtonAddCastingWindow_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
             this.Close();
