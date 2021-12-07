@@ -71,6 +71,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConnectionWindow.xaml.cs">
+      <DependentUpon>ConnectionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Proxy\AddCastingProxy.cs" />
@@ -117,6 +120,10 @@
     <Compile Include="Windows\Professional\addProfessionalWindow.xaml.cs">
       <DependentUpon>addProfessionalWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ConnectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -35,7 +35,7 @@ namespace MegaCastWPF.Views
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-
+            ((ViewModelArtist)this.DataContext).SaveItem();
         }
 
         private void ButtonDel_Click(object sender, RoutedEventArgs e)
