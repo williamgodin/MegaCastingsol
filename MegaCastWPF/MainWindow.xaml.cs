@@ -44,7 +44,7 @@ namespace MegaCastWPF
             ViewModelBroadcaster vm = new ViewModelBroadcaster();
             ViewBroadcaster view = new ViewBroadcaster();
             view.DataContext = vm;
-                
+
             this.DockPanel.Children.Add(view);
         }
 

@@ -85,6 +85,8 @@
     <Compile Include="Proxy\PersonProxy.cs" />
     <Compile Include="ViewModel\ViewModelAddWindow.cs" />
     <Compile Include="ViewModel\ViewModelArtist.cs" />
+    <Compile Include="ViewModel\ViewModelAddWindow.cs" />
+    <Compile Include="ViewModel\ViewModelArtist.cs" />
     <Compile Include="ViewModel\ViewModelBroadcaster.cs" />
     <Compile Include="ViewModel\ViewModelCasting.cs" />
     <Compile Include="ViewModel\ViewModelProfessional.cs" />
@@ -98,6 +100,9 @@
     </Compile>
     <Compile Include="Views\ViewCasting.xaml.cs">
       <DependentUpon>ViewCasting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewArtist.xaml.cs">
+      <DependentUpon>ViewArtist.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewArtist.xaml.cs">
       <DependentUpon>ViewArtist.xaml</DependentUpon>
@@ -152,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ViewArtist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewBroadcaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -161,6 +170,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ModifViews\ViewModifCasting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewProfessional.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Artiste\AddArtistWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Professional\addProfessionalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
