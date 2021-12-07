@@ -9,10 +9,7 @@ namespace MegaCastWPF.Proxy
 {
     public class AddCastingProxy
     {
-        
-
         public Casting Casting { get; set; }
-
         public String Intitule { get; set; }
         public DateTime Date_debut_publication{ get; set; }
         public Professionnel Professionnel  { get; set; }
