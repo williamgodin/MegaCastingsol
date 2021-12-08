@@ -1,5 +1,5 @@
 ﻿using Megacasting.DBLib;
-using MegaCastWPF.Windows.Professional;
+using MegaCastWPF.Views.AddViews;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -46,12 +46,12 @@ namespace MegaCastWPF.ViewModel
         {
             this.Entities.Civilité.ToList();
             ViewModelAddWindowBroadcaster vm = new ViewModelAddWindowBroadcaster(this.Entities.Civilité.Local);
-            addProfessionalWindow addProfessionalWindow = new addProfessionalWindow();
-            addProfessionalWindow.DataContext = vm;
-            addProfessionalWindow.ShowDialog();
+            AddWindowProfessional AddWindowProfessional = new AddWindowProfessional();
+            AddWindowProfessional.DataContext = vm;
+            AddWindowProfessional.ShowDialog();
 
 
-            if (addProfessionalWindow.DialogResult.GetValueOrDefault())
+            if (AddWindowProfessional.DialogResult.GetValueOrDefault())
             {
 
                 Professionnel professionnel = new Professionnel();

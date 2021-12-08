@@ -11,16 +11,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MegaCastWPF.Windows.Professional;
+using MegaCastWPF.ViewModel;
+using Megacasting.DBLib;
+using MegaCastWPF.Proxy;
 
-namespace MegaCastWPF.Windows.Professional
+namespace MegaCastWPF.Views.AddViews
 {
     /// <summary>
     /// Logique d'interaction pour addProfessionalWindow.xaml
     /// </summary>
-    public partial class addProfessionalWindow : Window
+    public partial class AddWindowProfessional :Window
     {
-        public addProfessionalWindow()
+        public AddWindowProfessional()
         {
             InitializeComponent();
             Megacasting.DBLib.Professionnel professionnel = new Megacasting.DBLib.Professionnel();

@@ -31,7 +31,7 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="Professional : " FontSize="18"/>
+                        <Label Grid.Column="0" Content="Professionel : " FontSize="18" Foreground="White" FontWeight="Bold"/>
                         <Label Grid.Column="1" Content="{Binding Nom}" FontSize="18"  Foreground="White" />
                     </Grid>
                 </DataTemplate>

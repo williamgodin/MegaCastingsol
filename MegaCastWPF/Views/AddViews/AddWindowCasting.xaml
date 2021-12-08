@@ -13,8 +13,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="150pt"/>
-            <ColumnDefinition Width="10pt"/>
-            <ColumnDefinition Width="150pt"/>
+            <ColumnDefinition Width="20pt"/>
+            <ColumnDefinition Width="300pt"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -31,6 +31,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="30pt"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -48,28 +49,28 @@
         <Label Grid.Row="11" Grid.Column="1" Content="Type de contrat :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
         <Label Grid.Row="12" Grid.Column="1" Content="Métier :" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
 
-        
-        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Proxy.Intitule}" materialDesign:HintAssist.Hint="Saisir l'intitulé"  FontSize="20"/>
+
+        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Proxy.Intitule}" materialDesign:HintAssist.Hint="Saisir l'intitulé"  FontSize="20" />
         <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Proxy.Reference}" materialDesign:HintAssist.Hint="Saisir la reference" FontSize="20"/>
-        <DatePicker SelectedDateFormat="Short" SelectedDate="{Binding Date_debut_publication}" Grid.Row="3" Grid.Column="3" Text="{Binding Proxy.Date_debut_publication}" FontSize="20"/>
+        <DatePicker SelectedDateFormat="Short" SelectedDate="{Binding Date_debut_publication}" Grid.Row="3" Grid.Column="3" Text="{Binding Proxy.Date_debut_publication}" HorizontalAlignment="Left" FontSize="20" Width="220pt"/>
         <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding Proxy.Nbr_poste}" materialDesign:HintAssist.Hint="Saisir le nombre de poste" FontSize="20"/>
         <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Proxy.Localisation}" materialDesign:HintAssist.Hint="Saisir le lieux" FontSize="20"/>
-        <TextBox Grid.Row="6" Grid.Column="3" Text="{Binding Proxy.Description_poste}" materialDesign:HintAssist.Hint="Saisir la description" FontSize="20"/>
-        <TextBox Grid.Row="7" Grid.Column="3" Text="{Binding Proxy.Description_profil}" materialDesign:HintAssist.Hint="Saisir le profil rechercher" FontSize="20"/>
+        <TextBox Grid.Row="6" Grid.Column="3" Text="{Binding Proxy.Description_poste}" materialDesign:HintAssist.Hint="Saisir la description" FontSize="20" AcceptsReturn="True" TextWrapping="Wrap"/>
+        <TextBox Grid.Row="7" Grid.Column="3" Text="{Binding Proxy.Description_profil}" materialDesign:HintAssist.Hint="Saisir le profil rechercher" FontSize="20" AcceptsReturn="True" TextWrapping="Wrap"/>
         <TextBox Grid.Row="8" Grid.Column="3" Text="{Binding Proxy.Coordonnée}" materialDesign:HintAssist.Hint="Saisir le téléphone" FontSize="20"/>
-        <DatePicker SelectedDateFormat="Short" SelectedDate="{Binding Date_debut_publication}" Grid.Row="9" Grid.Column="3" Text="{Binding Proxy.Date_debut_publication}" FontSize="20"/>
-        <ComboBox Grid.Row="10" Grid.Column="3" ItemsSource="{Binding Personnes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Proxy.Professionnel}" DisplayMemberPath="Nom" HorizontalAlignment="Left" FontSize="20" Width="150"/>
-        <ComboBox Grid.Row="11" Grid.Column="3" ItemsSource="{Binding Contrats, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle"  SelectedItem="{Binding Proxy.Contrat}" HorizontalAlignment="Left"  FontSize="20" Width="150"/>
-        <ComboBox Grid.Row="12" Grid.Column="3" ItemsSource="{Binding Metiers, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle"  SelectedItem="{Binding Proxy.Metier}" HorizontalAlignment="Left"  FontSize="20" Width="150"/>
+        <DatePicker SelectedDateFormat="Short" SelectedDate="{Binding Date_debut_publication}" Grid.Row="9" Grid.Column="3" Text="{Binding Proxy.Date_debut_publication}" HorizontalAlignment="Left" FontSize="20" Width="220pt"/>
+        <ComboBox Grid.Row="10" Grid.Column="3" ItemsSource="{Binding Personnes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Proxy.Professionnel}" DisplayMemberPath="Nom" FontSize="20" HorizontalAlignment="Left" Width="300"/>
+        <ComboBox Grid.Row="11" Grid.Column="3" ItemsSource="{Binding Contrats, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle"  SelectedItem="{Binding Proxy.Contrat}" HorizontalAlignment="Left"  FontSize="20" Width="300"/>
+        <ComboBox Grid.Row="12" Grid.Column="3" ItemsSource="{Binding Metiers, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle"  SelectedItem="{Binding Proxy.Metier}" HorizontalAlignment="Left"  FontSize="20" Width="300"/>
         <!--#endregion-->
         <!--#region Button-->
-        <Button Grid.Row="13" Grid.Column="1" 
+        <Button Grid.Row="14" Grid.Column="1" 
                 Content="Sauvegarder" 
                 IsDefault="True"
                 Foreground="White" 
                 Name="ButtonSave" 
                 Click="SaveButtonAddCastingWindow_Click"/>
-        <Button Grid.Row="13" Grid.Column="3" 
+        <Button Grid.Row="14" Grid.Column="3" 
                 IsCancel="True"
                 Content="Annuler" 
                 Foreground="White"  />

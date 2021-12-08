@@ -110,14 +110,14 @@
     <Compile Include="Views\ViewProfessional.xaml.cs">
       <DependentUpon>ViewProfessional.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Artiste\AddArtistWindow.xaml.cs">
+    <Compile Include="Views\AddViews\AddArtistWindow.xaml.cs">
       <DependentUpon>AddArtistWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ModifViews\ViewModifCasting.xaml.cs">
       <DependentUpon>ViewModifCasting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Professional\addProfessionalWindow.xaml.cs">
-      <DependentUpon>addProfessionalWindow.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddWindowProfessional.xaml.cs">
+      <DependentUpon>AddWindowProfessional.xaml</DependentUpon>
     </Compile>
     <Page Include="ConnectionWindow.xaml">
       <SubType>Designer</SubType>
@@ -167,15 +167,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Artiste\AddArtistWindow.xaml">
+    <Page Include="Views\AddViews\AddArtistWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Professional\addProfessionalWindow.xaml">
+    <Page Include="Views\AddViews\AddWindowProfessional.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

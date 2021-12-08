@@ -17,7 +17,7 @@ using MegaCastWPF.Proxy;
 
 
 
-namespace MegaCastWPF.Windows.Artiste
+namespace MegaCastWPF.Views.AddViews
 {
     /// <summary>
     /// Logique d'interaction pour AddArtistWindow.xaml

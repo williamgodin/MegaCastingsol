@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MegaCastWPF.Windows.Artiste;
+using MegaCastWPF.Views.AddViews;
 using Megacasting.DBLib;
 
 namespace MegaCastWPF.Views

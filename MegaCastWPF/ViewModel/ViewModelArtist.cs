@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Megacasting.DBLib;
 using MegaCastWPF.Views;
-using MegaCastWPF.Windows.Artiste;
+using MegaCastWPF.Views.AddViews;
 
 namespace MegaCastWPF.ViewModel
 {
