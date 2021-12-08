@@ -22,7 +22,7 @@
             <DataGrid.Columns  >
                 <DataGridTextColumn  Header="Intitulé" Binding="{Binding Intitule}"/>
                 <DataGridTextColumn  Header="Référence" Binding="{Binding Reference}"/>
-                <DataGridTextColumn  Header="Date de publication" Binding="{Binding Date_debut_publication}"/>
+                <DataGridTextColumn  Header="Date de publication" Binding="{Binding Date_debut_publication, StringFormat='dd/MM/yyyy'}" />
                 <DataGridTextColumn  Header="Nombre de Poste" Binding="{Binding Nbr_poste}"/>
                 <DataGridTextColumn  Header="Lieux" Binding="{Binding Localisation}"/>
                 <DataGridTextColumn  Header="Coordonnées" Binding="{Binding Coordonnees}"/>

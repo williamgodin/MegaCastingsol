@@ -51,7 +51,7 @@
 
         <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Intitule}" materialDesign:HintAssist.Hint="Saisir l'intitulé"  FontSize="20"/>
         <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Reference}" materialDesign:HintAssist.Hint="Saisir la reference" FontSize="20"/>
-        <DatePicker SelectedDateFormat="Short" SelectedDate="{Binding Proxy.SelectedCasting.Date_debut_publication}" Grid.Row="3" Grid.Column="3" Text="{Binding Proxy.Date_debut_publication}" FontSize="20"/>
+        <DatePicker SelectedDateFormat="Short" SelectedDate="{Binding Proxy.SelectedCasting.Date_debut_publication}" Grid.Row="3" Grid.Column="3"  FontSize="20"/>
         <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Nbr_poste}" materialDesign:HintAssist.Hint="Saisir le nombre de poste" FontSize="20"/>
         <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Localisation}" materialDesign:HintAssist.Hint="Saisir le lieux" FontSize="20"/>
         <TextBox Grid.Row="6" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Description_poste}" materialDesign:HintAssist.Hint="Saisir la description" FontSize="20"/>

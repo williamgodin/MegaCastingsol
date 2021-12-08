@@ -22,6 +22,11 @@ namespace MegaCastWPF.Proxy
         public string Localisation { get; set; }
         public int Nbr_poste { get; set; }
         public int Reference { get; set; }
-        
+
+        public AddCastingProxy()
+        {
+            this.Date_debut_publication = DateTime.Now;
+            this.Duree_diffusion = DateTime.Now;
+        }
     }
 }

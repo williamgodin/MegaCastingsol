@@ -28,6 +28,8 @@ namespace MegaCastWPF.Proxy
         public string Localisation { get; set; }
         public int Nbr_poste { get; set; }
         public int Reference { get; set; }
+
+        
     }
 
 }
