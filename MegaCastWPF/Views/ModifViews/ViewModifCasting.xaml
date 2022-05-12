@@ -58,7 +58,7 @@
         <TextBox Grid.Row="7" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Description_profil}" materialDesign:HintAssist.Hint="Saisir le profil rechercher" FontSize="20"/>
         <TextBox Grid.Row="8" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Coordonnees}" materialDesign:HintAssist.Hint="Saisir le téléphone" FontSize="20"/>
         <DatePicker SelectedDateFormat="Short" SelectedDate="{Binding Date_debut_publication}" Grid.Row="9" Grid.Column="3" Text="{Binding Proxy.SelectedCasting.Date_debut_publication}" FontSize="20"/>
-        <ComboBox Grid.Row="10" Grid.Column="3" ItemsSource="{Binding Personnes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Proxy.SelectedCasting.Professionnel}" DisplayMemberPath="Nom" HorizontalAlignment="Left" FontSize="20" Width="150"/>
+        <ComboBox Grid.Row="10" Grid.Column="3" ItemsSource="{Binding Personnes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Proxy.SelectedCasting.Personne}" DisplayMemberPath="Nom"  HorizontalAlignment="Left" FontSize="20" Width="300"/>
         <ComboBox Grid.Row="11" Grid.Column="3" ItemsSource="{Binding Contrats, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Proxy.SelectedCasting.Type_de_contrat}" DisplayMemberPath="Libelle"   HorizontalAlignment="Left"  FontSize="20" Width="150"/>
         <ComboBox Grid.Row="12" Grid.Column="3" ItemsSource="{Binding Metiers, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Proxy.SelectedCasting.Métier}" DisplayMemberPath="Libelle"   HorizontalAlignment="Left"  FontSize="20" Width="150"/>
         <!--#endregion-->

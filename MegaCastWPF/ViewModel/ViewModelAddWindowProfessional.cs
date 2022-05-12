@@ -10,42 +10,44 @@ using System.Threading.Tasks;
 
 namespace MegaCastWPF.ViewModel
 {
-    class ViewModelAddWindowBroadcaster
+    class ViewModelAddWindowProfessional
     {
+        private AddProfessionelProxy _Proxy;
         #region Fields
         /// <summary>
         /// Unique
         /// </summary>
         private Personne _SelectedItem;
-        private Civilité _SelectedCivilite;
-        private AddBroadcasterProxy _Proxy;
+        private Civilité _SelectedCivilité;
 
 
         /// <summary>
         /// Liste
         /// </summary>
         public ObservableCollection<Personne> _Items;
-        public ObservableCollection<Civilité> _Civilites;
+        public ObservableCollection<Civilité> _Civilités;
         #endregion
 
         #region Properties
         /// <summary>
         /// Unique
         /// </summary>
+        /// 
+
+        public AddProfessionelProxy Proxy
+        {
+            get { return _Proxy; }
+            set { _Proxy = value; }
+        }
         public Personne SelectedItem
         {
             get { return _SelectedItem; }
             set { _SelectedItem = value; }
         }
-        public Civilité SelectedCivilite
+        public Civilité SelectedCivilité
         {
-            get { return _SelectedCivilite; }
-            set { _SelectedCivilite = value; }
-        }
-        public AddBroadcasterProxy Proxy
-        {
-            get { return _Proxy; }
-            set { _Proxy = value; }
+            get { return _SelectedCivilité; }
+            set { _SelectedCivilité = value; }
         }
         /// <summary>
         /// Liste
@@ -56,10 +58,10 @@ namespace MegaCastWPF.ViewModel
             set { _Items = value; }
         }
 
-        public ObservableCollection<Civilité> Civilites
+        public ObservableCollection<Civilité> Civilités
         {
-            get { return _Civilites; }
-            set { _Civilites = value; }
+            get { return _Civilités; }
+            set { _Civilités = value; }
         }
 
         #endregion
@@ -68,11 +70,11 @@ namespace MegaCastWPF.ViewModel
         /// <summary>
         /// Créer la fenêtre d'ajout d'un broadcaster
         /// </summary>
-        /// <param name="civilites">Permet d'obetenir la liste des civilités</param>
-        public ViewModelAddWindowBroadcaster(ObservableCollection<Civilité> civilites)
+        /// <param name="Civilités">Permet d'obetenir la liste des civilités</param>
+        public ViewModelAddWindowProfessional(ObservableCollection<Civilité> Civilités)
         {
-            this.Proxy = new AddBroadcasterProxy();
-            this.Civilites = civilites;
+            this.Proxy = new AddProfessionelProxy();
+            this.Civilités = Civilités;
         }
 
 

@@ -12,10 +12,9 @@ namespace Megacasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class Artiste
+    public partial class Participer
     {
-        public int Id_Personne { get; set; }
-    
-        public virtual Personne Personne { get; set; }
+        public int Id_Casting { get; set; }
+        public int Id_Artiste { get; set; }
     }
 }

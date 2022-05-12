@@ -25,7 +25,7 @@ namespace MegaCastWPF.Views.AddViews
         public AddWindowProfessional()
         {
             InitializeComponent();
-            Megacasting.DBLib.Professionnel professionnel = new Megacasting.DBLib.Professionnel();
+            Megacasting.DBLib.Personne professionnel = new Megacasting.DBLib.Personne();
             this.DataContext = professionnel;
         }
 
@@ -38,5 +38,7 @@ namespace MegaCastWPF.Views.AddViews
         {
             this.DialogResult = true;
         }
+
+  
     }
 }

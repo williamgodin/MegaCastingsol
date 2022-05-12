@@ -12,7 +12,7 @@ namespace Megacasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public abstract partial class Personne
+    public partial class Personne
     {
         public int Id_Personne { get; set; }
         public string Nom { get; set; }
@@ -23,6 +23,8 @@ namespace Megacasting.DBLib
         public string Telephone { get; set; }
         public int Id_Civilite { get; set; }
     
+        public virtual Artiste Artiste { get; set; }
         public virtual Civilité Civilité { get; set; }
+        public virtual Professionnel Professionnel { get; set; }
     }
 }

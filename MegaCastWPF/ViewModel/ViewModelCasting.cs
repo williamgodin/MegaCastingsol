@@ -88,8 +88,8 @@ namespace MegaCastWPF.ViewModel
                 casting.Description_poste = vm.Proxy.Description_poste;
                 casting.Description_profil = vm.Proxy.Description_profil;
                 casting.Coordonnees = vm.Proxy.Coordonnée;
-                casting.Duree_diffusion = vm.Proxy.Duree_diffusion;
                 casting.Professionnel = vm.Proxy.Professionnel;
+                casting.Duree_diffusion = vm.Proxy.Duree_diffusion;
                 casting.Type_de_contrat = vm.Proxy.Contrat;
                 casting.Métier = vm.Proxy.Metier;
 

@@ -18,7 +18,7 @@ namespace MegaCastWPF.Proxy
         public Casting Casting { get; set; }
         public String Intitule { get; set; }
         public DateTime Date_debut_publication { get; set; }
-        public Professionnel Professionnel { get; set; }
+        public Personne Professionnel { get; set; }
         public Métier Metier { get; set; }
         public Type_de_contrat Contrat { get; set; }
         public DateTime Duree_diffusion { get; set; }

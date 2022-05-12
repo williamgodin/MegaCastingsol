@@ -80,5 +80,6 @@
     <Build Include="dbo\Tables\Professionnel.sql" />
     <Build Include="dbo\Tables\Casting.sql" />
     <Build Include="dbo\Tables\Participer.sql" />
+    <Build Include="dbo\Tables\Utilisateur.sql" />
   </ItemGroup>
 </Project>

@@ -33,6 +33,49 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Megacasting|AnyCPU'">
+    <OutputPath>bin\Megacasting\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Megacasting|x64'">
+    <OutputPath>bin\x64\Megacasting\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'test|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -63,6 +106,9 @@
       <DependentUpon>MegaCastingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="ComplexType1.cs">
+      <DependentUpon>MegaCastingEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Domaine_de_métier.cs">
       <DependentUpon>MegaCastingEntities.tt</DependentUpon>
     </Compile>
@@ -84,6 +130,9 @@
     <Compile Include="Métier.cs">
       <DependentUpon>MegaCastingEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Participer.cs">
+      <DependentUpon>MegaCastingEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Personne.cs">
       <DependentUpon>MegaCastingEntities.tt</DependentUpon>
     </Compile>
@@ -91,7 +140,13 @@
       <DependentUpon>MegaCastingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>MegaCastingEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Type_de_contrat.cs">
+      <DependentUpon>MegaCastingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utilisateur.cs">
       <DependentUpon>MegaCastingEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -10,12 +10,9 @@
 namespace Megacasting.DBLib
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Artiste
+    public partial class ComplexType1
     {
-        public int Id_Personne { get; set; }
-    
-        public virtual Personne Personne { get; set; }
+        public string Identifiant { get; set; }
     }
 }

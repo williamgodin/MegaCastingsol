@@ -93,13 +93,13 @@ namespace MegaCastWPF.ViewModel
         /// <summary>
         /// Créer la fenêtre de mofication en lialnt avec les valeur du proxy
         /// </summary>
-        /// <param name="personnes">Permet d'avoir la liste des organisateur</param>
+        /// <param name="Personnes">Permet d'avoir la liste des organisateur</param>
         /// <param name="contrats">Permet d'avoir la liste des types de contrat</param>
         /// <param name="metiers">Permet d'avoir la liste des métiers</param>
-        public ViewModelModifWindowCasting(IEnumerable<Personne> personnes, IEnumerable<Type_de_contrat> contrats, IEnumerable<Métier> metiers)
+        public ViewModelModifWindowCasting(IEnumerable<Personne> Personnes, IEnumerable<Type_de_contrat> contrats, IEnumerable<Métier> metiers)
         {
             this.Proxy = new ModifCastingProxy();
-            this.Personnes = personnes;
+            this.Personnes = Personnes;
             this.Contrats = contrats;
             this.Metiers = metiers;
         }

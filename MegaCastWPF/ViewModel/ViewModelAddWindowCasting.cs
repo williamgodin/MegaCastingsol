@@ -92,13 +92,13 @@ namespace MegaCastWPF.ViewModel
         /// <summary>
         /// Créer la fenêtre d'ajout d'un casting
         /// </summary>
-        /// <param name="personnes">Permet l'affichage des organisateur</param>
+        /// <param name="Personnes">Permet l'affichage des organisateur</param>
         /// <param name="contrats">Permet l'affichage des tpes de contrats</param>
         /// <param name="metiers">Permet l'affichage des métiers</param>
-        public ViewModelAddWindowCasting(IEnumerable<Personne> personnes, IEnumerable<Type_de_contrat> contrats, IEnumerable<Métier> metiers)
+        public ViewModelAddWindowCasting(IEnumerable<Personne> Personnes, IEnumerable<Type_de_contrat> contrats, IEnumerable<Métier> metiers)
         {
             this.Proxy = new AddCastingProxy();
-            this.Personnes = personnes;
+            this.Personnes = Personnes;
             this.Contrats = contrats;
             this.Metiers = metiers;
         }

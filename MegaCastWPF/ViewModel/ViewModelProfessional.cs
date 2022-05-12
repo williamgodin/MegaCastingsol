@@ -45,7 +45,7 @@ namespace MegaCastWPF.ViewModel
         public void AddItem()
         {
             this.Entities.Civilité.ToList();
-            ViewModelAddWindowBroadcaster vm = new ViewModelAddWindowBroadcaster(this.Entities.Civilité.Local);
+            ViewModelAddWindowProfessional vm = new ViewModelAddWindowProfessional(this.Entities.Civilité.Local);
             AddWindowProfessional AddWindowProfessional = new AddWindowProfessional();
             AddWindowProfessional.DataContext = vm;
             AddWindowProfessional.ShowDialog();
@@ -54,9 +54,8 @@ namespace MegaCastWPF.ViewModel
             if (AddWindowProfessional.DialogResult.GetValueOrDefault())
             {
 
-                Professionnel professionnel = new Professionnel();
-                professionnel.Civilité = vm.Proxy.Civilite;
-                professionnel.Id_Civilite = vm.Proxy.Civilite.Id_Civilite;
+                Personne professionnel = new Personne();
+                professionnel.Id_Civilite = vm.Proxy._SelectedCivilite.Id_Civilite;
                 professionnel.Nom = vm.Proxy.Lastname;
                 professionnel.Prenom = vm.Proxy.Firstname;
                 professionnel.Ville = vm.Proxy.City;
